@@ -1,6 +1,5 @@
-# Author: Francis Bautista
-# Created: October 9, 2014
-
+# Author: Pivotal
+# Organization: St. Edward Integrated School
 #
 # Default using:
 # => Twitter Bootstrap 3
