@@ -52,7 +52,7 @@ gem 'turbolinks'
 #===================================#
 # gem 'activeadmin',         github: 'gregbell/active_admin'
 # gem 'cancan'
-# gem 'devise'
+gem 'devise'
 # gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 #===================================#
