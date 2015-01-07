@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Payment:</strong>
+  <%= @guardianship.payment_id %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @guardianship.student_id %>
+</p>
+
+<%= link_to 'Edit', edit_guardianship_path(@guardianship) %> |
+<%= link_to 'Back', guardianships_path %>

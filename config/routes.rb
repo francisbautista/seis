@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :guardianships
+
   devise_for :users
   resources :parents
 
