@@ -50,7 +50,8 @@ gem 'turbolinks'
 #===================================#
 #  Functionality Gems               #
 #===================================#
-# gem 'activeadmin',         github: 'gregbell/active_admin'
+# gem 'activeadmin', github: 'activeadmin'
+# gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
 # gem 'cancan'
 gem 'devise'
 # gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
