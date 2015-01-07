@@ -7,3 +7,8 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ .verticalLine {
+     border-left: solid #000;
+     padding-left: 50px;
+ }
