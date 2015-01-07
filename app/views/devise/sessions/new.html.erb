@@ -1,19 +1,18 @@
 <section class="row" data-autoheight="true">
-    <div class="container">
-        <div class="vspacer2"></div>
+    <div class="vspacer1"></div>
+    <div class="container login">
         <div class="row">
             <div class="col-xs-3 col-xs-offset-1">
                 <center>
-                    <img src="http://placehold.it/550x400/603c97" class="img-responsive" alt="Responsive image">
+                    <img id="brand-logo"style="max-width:100px; margin-top: -7px;"
+                    src="/img/seis_brand.png">
             </div>
             <div class="col-xs-4 col-xs-offset-1 verticalLine">
 
-                <h2>Log in</h2>
-
                 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <div class="form-inputs">
-                    <%= f.input :email, required: false, autofocus: true %>
-                    <%= f.input :password, required: false %>
+                    <%= f.input :email, required: false, autofocus: true, label: false,placeholder: 'Email' %>
+                    <%= f.input :password, required: false, label: false, placeholder: 'Password' %>
                     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
                 </div>
 

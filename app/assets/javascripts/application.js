@@ -74,4 +74,12 @@ function resize_sections()
         jQuery(this).css('height', spacer_height);
     });
 
+    jQuery('div.vspacerx').each(function() {
+        var parent_height = jQuery(this).parents('section').height();
+        var spacer_height = Math.round(parent_height * 0.05);
+
+        jQuery(this).css('height', spacer_height);
+    });
+
+
 }

@@ -23,7 +23,31 @@
      color: #fff;
  }
 
+ .login {
+     background-color: #fff;
+     padding-top: 5%;
+     padding-bottom: 5%;
+     width: 70%;
+ }
+
  .verticalLine {
-     border-left: solid #000;
+     border-left: solid #cccccc;
      padding-left: 50px;
+     border-width: 1px;
+ }
+
+ .simple_form div.input {
+     margin-bottom: 10px;
+     clear: both; /* Required for Webkit, but not for Gecko */
+
+ }
+
+ .simple_form input {
+     border-radius: 3px;
+     border: 1px solid #cccccc;
+     box-shadow: none
+ }
+
+ #brand-logo {
+     padding-top:12%;
  }
