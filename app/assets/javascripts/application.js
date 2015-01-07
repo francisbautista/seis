@@ -7,79 +7,71 @@
 //= require turbolinks
 //= require_tree .
 
-jQuery(document).ready ->
+jQuery(document).ready(function(){
+    // Set sections to fill height
+    resize_sections();
 
-# Set sections to fill height
-resize_sections()
+    // Resize sections on window resize
+    jQuery(window).resize(function() {
+        resize_sections();
+    });
+});
 
-# Resize sections on window resize
-jQuery(window).resize ->
-resize_sections()
-return
+function resize_sections()
+{
+    var window_height = jQuery(window).height();
+    jQuery('[data-autoheight="true"]').css('min-height', jQuery(window).height());
 
-return
+    jQuery('div.vspacer').each(function() {
+        var parent_height = jQuery(this).parents('section').height();
+        var spacer_height = Math.round(parent_height * 0.25);
 
-$ ->
-$("button.page-scroll").bind "click", (event) ->
-$anchor = $(this)
-$("html, body").stop().animate
-scrollTop: $($anchor.attr("href")).offset().top
-, 1000, "easeOutQuart"
-event.preventDefault()
-return
+        jQuery(this).css('height', spacer_height);
+    });
 
-return
+    var window_height = jQuery(window).height();
+    jQuery('[data-autoheight="true"]').css('min-height', jQuery(window).height());
+
+    jQuery('div.vspacer1').each(function() {
+        var parent_height = jQuery(this).parents('section').height();
+        var spacer_height = Math.round(parent_height * 0.10);
+
+        jQuery(this).css('height', spacer_height);
+    });
 
 
-resize_sections = ->
-window_height = jQuery(window).height()
-jQuery("[data-autoheight=\"true\"]").css "min-height", jQuery(window).height()
-jQuery("div.vspacer").each ->
-parent_height = jQuery(this).parents("section").height()
-spacer_height = Math.round(parent_height * 0.10)
-jQuery(this).css "height", spacer_height
-return
+    var window_height = jQuery(window).height();
+    jQuery('[data-autoheight="true"]').css('min-height', jQuery(window).height());
 
-window_height = jQuery(window).height()
-jQuery("[data-autoheight=\"true\"]").css "min-height", jQuery(window).height()
-jQuery("div.vspacerx").each ->
-parent_height = jQuery(this).parents("section").height()
-spacer_height = Math.round(parent_height * 0.05)
-jQuery(this).css "height", spacer_height
-return
+    jQuery('div.vspacer6').each(function() {
+        var parent_height = jQuery(this).parents('section').height();
+        var spacer_height = Math.round(parent_height * 0.12);
 
-window_height = jQuery(window).height()
-jQuery("[data-autoheight=\"true\"]").css "min-height", jQuery(window).height()
-jQuery("div.vspacer1").each ->
-parent_height = jQuery(this).parents("section").height()
-spacer_height = Math.round(parent_height * 0.15)
-jQuery(this).css "height", spacer_height
-return
+        jQuery(this).css('height', spacer_height);
+    });
 
-window_height = jQuery(window).height()
-jQuery("[data-autoheight=\"true\"]").css "min-height", jQuery(window).height()
-jQuery("div.vspacer6").each ->
-parent_height = jQuery(this).parents("section").height()
-spacer_height = Math.round(parent_height * 0.20)
-jQuery(this).css "height", spacer_height
-return
 
-jQuery("div.vspacer2").each ->
-parent_height = jQuery(this).parents("section").height()
-spacer_height = Math.round(parent_height * 0.30)
-jQuery(this).css "height", spacer_height
-return
 
-jQuery("div.vspacer3").each ->
-parent_height = jQuery(this).parents("section").height()
-spacer_height = Math.round(parent_height * 0.40)
-jQuery(this).css "height", spacer_height
-return
 
-jQuery("div.vspacer4").each ->
-parent_height = jQuery(this).parents("section").height()
-spacer_height = Math.round(parent_height * 0.60)
-jQuery(this).css "height", spacer_height
-return
+    jQuery('div.vspacer2').each(function() {
+        var parent_height = jQuery(this).parents('section').height();
+        var spacer_height = Math.round(parent_height * 0.33);
 
-return
+        jQuery(this).css('height', spacer_height);
+    });
+
+    jQuery('div.vspacer3').each(function() {
+        var parent_height = jQuery(this).parents('section').height();
+        var spacer_height = Math.round(parent_height * 0.20);
+
+        jQuery(this).css('height', spacer_height);
+    });
+
+    jQuery('div.vspacer4').each(function() {
+        var parent_height = jQuery(this).parents('section').height();
+        var spacer_height = Math.round(parent_height * 0.70);
+
+        jQuery(this).css('height', spacer_height);
+    });
+
+}
