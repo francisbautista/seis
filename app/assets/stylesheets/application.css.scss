@@ -7,6 +7,21 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import '_globals';
+
+ body {
+     background: $bg-brand;
+     font-size: 1.5em;
+     font: $body-font;
+     max-width: 100%;
+ }
+
+ .navbar-default {
+     background-color: $green-brand;
+ }
+ .navbar-default .navbar-nav > li > a {
+     color: #fff;
+ }
 
  .verticalLine {
      border-left: solid #000;
