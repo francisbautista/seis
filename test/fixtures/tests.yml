@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  test_number: 1
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  test_count: 1
+  test_status: false
+  test_remarks: MyText
+
+two:
+  test_number: 1
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  test_count: 1
+  test_status: false
+  test_remarks: MyText
