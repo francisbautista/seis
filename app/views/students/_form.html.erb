@@ -1,0 +1,37 @@
+<%= simple_form_for(@student) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :id_number %>
+    <%= f.input :first_name %>
+    <%= f.input :middle_name %>
+    <%= f.input :last_name %>
+    <%= f.input :admission_date %>
+    <%= f.input :batch_number %>
+    <%= f.input :year_level %>
+    <%= f.input :section %>
+    <%= f.input :gender %>
+    <%= f.input :birthdate %>
+    <%= f.input :nationality %>
+    <%= f.input :birth_place %>
+    <%= f.input :religion %>
+    <%= f.input :street %>
+    <%= f.input :barangay %>
+    <%= f.input :city %>
+    <%= f.input :postal_code %>
+    <%= f.input :country %>
+    <%= f.input :lancaster_resident %>
+    <%= f.input :landline %>
+    <%= f.input :mobile %>
+    <%= f.input :email %>
+    <%= f.input :institution_name %>
+    <%= f.input :year_level %>
+    <%= f.input :school_year %>
+    <%= f.input :grade %>
+    <%= f.input :general_avg %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

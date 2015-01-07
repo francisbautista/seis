@@ -1,0 +1,77 @@
+<h1>Listing students</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id number</th>
+      <th>First name</th>
+      <th>Middle name</th>
+      <th>Last name</th>
+      <th>Admission date</th>
+      <th>Batch number</th>
+      <th>Year level</th>
+      <th>Section</th>
+      <th>Gender</th>
+      <th>Birthdate</th>
+      <th>Nationality</th>
+      <th>Birth place</th>
+      <th>Religion</th>
+      <th>Street</th>
+      <th>Barangay</th>
+      <th>City</th>
+      <th>Postal code</th>
+      <th>Country</th>
+      <th>Lancaster resident</th>
+      <th>Landline</th>
+      <th>Mobile</th>
+      <th>Email</th>
+      <th>Institution name</th>
+      <th>Year level</th>
+      <th>School year</th>
+      <th>Grade</th>
+      <th>General avg</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.id_number %></td>
+        <td><%= student.first_name %></td>
+        <td><%= student.middle_name %></td>
+        <td><%= student.last_name %></td>
+        <td><%= student.admission_date %></td>
+        <td><%= student.batch_number %></td>
+        <td><%= student.year_level %></td>
+        <td><%= student.section %></td>
+        <td><%= student.gender %></td>
+        <td><%= student.birthdate %></td>
+        <td><%= student.nationality %></td>
+        <td><%= student.birth_place %></td>
+        <td><%= student.religion %></td>
+        <td><%= student.street %></td>
+        <td><%= student.barangay %></td>
+        <td><%= student.city %></td>
+        <td><%= student.postal_code %></td>
+        <td><%= student.country %></td>
+        <td><%= student.lancaster_resident %></td>
+        <td><%= student.landline %></td>
+        <td><%= student.mobile %></td>
+        <td><%= student.email %></td>
+        <td><%= student.institution_name %></td>
+        <td><%= student.year_level %></td>
+        <td><%= student.school_year %></td>
+        <td><%= student.grade %></td>
+        <td><%= student.general_avg %></td>
+        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student', new_student_path %>

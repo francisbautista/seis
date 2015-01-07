@@ -1,49 +1,18 @@
-<%= form_for(@payment) do |f| %>
-  <% if @payment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+<%= simple_form_for(@payment) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @payment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="form-inputs">
+    <%= f.input :mode %>
+    <%= f.input :testing_amount %>
+    <%= f.input :reservation_amount %>
+    <%= f.input :tuition_amount %>
+    <%= f.input :discount_rate %>
+    <%= f.input :discount_desc %>
+    <%= f.input :installment_number %>
+    <%= f.input :or_number %>
+  </div>
 
-  <div class="field">
-    <%= f.label :mode %><br>
-    <%= f.text_field :mode %>
-  </div>
-  <div class="field">
-    <%= f.label :testing_amount %><br>
-    <%= f.text_field :testing_amount %>
-  </div>
-  <div class="field">
-    <%= f.label :reservation_amount %><br>
-    <%= f.text_field :reservation_amount %>
-  </div>
-  <div class="field">
-    <%= f.label :tuition_amount %><br>
-    <%= f.text_field :tuition_amount %>
-  </div>
-  <div class="field">
-    <%= f.label :discount_rate %><br>
-    <%= f.text_field :discount_rate %>
-  </div>
-  <div class="field">
-    <%= f.label :discount_desc %><br>
-    <%= f.text_area :discount_desc %>
-  </div>
-  <div class="field">
-    <%= f.label :installment_number %><br>
-    <%= f.number_field :installment_number %>
-  </div>
-  <div class="field">
-    <%= f.label :or_number %><br>
-    <%= f.number_field :or_number %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>
