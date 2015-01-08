@@ -1,59 +1,87 @@
 <%= simple_form_for(@student) do |f| %>
-  <%= f.error_notification %>
-  <div class="row">
-      <div class="col-xs-5">
-          <div class="form-inputs">
-              <%= f.input :last_name %>
-              <%= f.input :admission_date %>
-              <%= f.input :gender %>
-              <%= f.input :birthdate %>
-          </div>
-      </div>
-      <div class="col-xs-5">
-          <div class="form-inputs">
-              <%= f.input :first_name %>
-              <%= f.input :year_level %>
-              <%= f.input :nationality %>
-              <%= f.input :birth_place %>
-          </div>
-      </div>
-      <div class="col-xs-2">
-          <div class="form-inputs">
-              <%= f.input :middle_name %>
-          </div>
-      </div>
-  </div>
-  <div class="form-inputs">
-    <%= f.input :id_number %>
+<%= f.error_notification %>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-4 in">
+                <%= f.input :last_name, :input_html => { :wrap => :soft, :rows => 2}, :label => 'Last Name:', wrapper_html: { class:  'type' } %>
+            </div>
+            <div class="col-xs-4 in">
+                <%= f.input :first_name, :label => 'First Name:' %>
+            </div>
+            <div class="col-xs-4 in">
+                <%= f.input :middle_name, :label => 'Middle Initial:' %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 in">
+                <div class="form-inputs">
+                    <%= f.input :admission_date,order: [:month, :day, :year] %>
+                    <%= f.input :gender, as: :select, :collection => ['Male','Female'] %>
+                    <%= f.input :birthdate, as: :date, start_year: Date.today.year - 10,
+                    end_year: Date.today.year - 12, discard_day: false,
+                    order: [:month, :day, :year] %>
+                    <%= f.input :religion %>
+                    <%= f.input :batch_number %>
+
+                    <%= f.input :section %>
+                </div>
+            </div>
+            <div class="col-xs-4 in">
+                <div class="form-inputs">
+
+                    <%= f.input :id_number %>
+                    <%= f.input :year_level %>
+                    <%= f.input :nationality %>
+                    <%= f.input :birth_place %>
+                    <%= f.input :street %>
+                    <%= f.input :barangay %>
+                    <%= f.input :city %>
+                    <%= f.input :postal_code %>
+                    <%= f.input :country %>
+                    <%= f.input :lancaster_resident %>
+                </div>
+            </div>
+            <div class="col-xs-4 in">
+                <div class="form-inputs">
+
+                    <%= f.input :landline %>
+                    <%= f.input :mobile %>
+                    <%= f.input :email %>
+                    <%= f.input :institution_name %>
+                    <%= f.input :year_level %>
+                    <%= f.input :school_year %>
+                    <%= f.input :grade %>
+                    <%= f.input :general_avg %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="form-actions">
+            <%= f.button :submit %>
+        </div>
+    </div>
+</div>
+
+
+
+  <!-- <div class="form-inputs">
 
 
 
 
-    <%= f.input :batch_number %>
-
-    <%= f.input :section %>
 
 
 
 
-    <%= f.input :religion %>
-    <%= f.input :street %>
-    <%= f.input :barangay %>
-    <%= f.input :city %>
-    <%= f.input :postal_code %>
-    <%= f.input :country %>
-    <%= f.input :lancaster_resident %>
-    <%= f.input :landline %>
-    <%= f.input :mobile %>
-    <%= f.input :email %>
-    <%= f.input :institution_name %>
-    <%= f.input :year_level %>
-    <%= f.input :school_year %>
-    <%= f.input :grade %>
-    <%= f.input :general_avg %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+
+
+
+
+
+  </div> -->
+
+
 <% end %>
