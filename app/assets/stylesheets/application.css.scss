@@ -15,7 +15,7 @@
      font: $body-font;
      max-width: 100%;
  }
-
+// Navbar Styling
  .navbar-default {
      background-color: $green-brand;
  }
@@ -23,6 +23,7 @@
      color: #fff;
  }
 
+// Login Styling
  .login {
      background-color: #fff;
      padding-top: 5%;
@@ -35,7 +36,12 @@
      padding-left: 50px;
      border-width: 1px;
  }
+ #brand-logo {
+     padding-top:12%;
+ }
+ 
 
+// Simple Form Styling
  .simple_form div.input {
      margin-bottom: 10px;
      clear: both; /* Required for Webkit, but not for Gecko */
@@ -46,8 +52,4 @@
      border-radius: 3px;
      border: 1px solid #cccccc;
      box-shadow: none
- }
-
- #brand-logo {
-     padding-top:12%;
  }
