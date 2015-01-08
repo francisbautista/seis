@@ -4,24 +4,25 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-xs-4 in">
-                <%= f.input :last_name, :input_html => { :wrap => :soft, :rows => 2}, :label => 'Last Name:', wrapper_html: { class:  'type' } %>
+                <%= f.input :last_name, :input_html => { :wrap => :soft, :rows => 2}, :label => 'Last Name:', wrapper_html: { class:  'type' }, placeholder:'Rizal' %>
             </div>
             <div class="col-xs-4 in">
-                <%= f.input :first_name, :label => 'First Name:' %>
+                <%= f.input :first_name, :label => 'First Name:', placeholder:'Jose' %>
             </div>
             <div class="col-xs-4 in">
-                <%= f.input :middle_name, :label => 'Middle Initial:' %>
+                <%= f.input :middle_name, :label => 'Middle Initial:', placeholder:'P' %>
             </div>
         </div>
+        <!-- todo: add validations to rest of fields -->
         <div class="row">
             <div class="col-xs-4 in">
                 <div class="form-inputs">
-                    <%= f.input :admission_date,order: [:month, :day, :year] %>
+                    <%= f.input :admission_date, order: [:month, :day, :year] %>
                     <%= f.input :gender, as: :select, :collection => ['Male','Female'] %>
                     <%= f.input :birthdate, as: :date, start_year: Date.today.year - 10,
                     end_year: Date.today.year - 12, discard_day: false,
                     order: [:month, :day, :year] %>
-                    <%= f.input :religion %>
+                    <%= f.input :religion, hint: 'Roman Catholic, Muslim, Hindu' %>
                     <%= f.input :batch_number %>
 
                     <%= f.input :section %>
@@ -32,12 +33,12 @@
 
                     <%= f.input :id_number %>
                     <%= f.input :year_level %>
-                    <%= f.input :nationality %>
+                    <%= f.input :nationality, placeholder: 'Filipino' %>
                     <%= f.input :birth_place %>
-                    <%= f.input :street %>
-                    <%= f.input :barangay %>
-                    <%= f.input :city %>
-                    <%= f.input :postal_code %>
+                    <%= f.input :street, hint: 'Mabini Avenue' %>
+                    <%= f.input :barangay, hint: 'Mayamot' %>
+                    <%= f.input :city, hint: 'Trese Martires' %>
+                    <%= f.input :postal_code, input_html: { maxlength: 4 },hint: 'Numeric values only please.' %>
                     <%= f.input :country %>
                     <%= f.input :lancaster_resident %>
                 </div>
@@ -45,14 +46,14 @@
             <div class="col-xs-4 in">
                 <div class="form-inputs">
 
-                    <%= f.input :landline %>
-                    <%= f.input :mobile %>
-                    <%= f.input :email %>
+                    <%= f.input :landline, placeholder: '02-673-XXXX' %>
+                    <%= f.input :mobile, placeholder: '0917-XXX-XXXX' %>
+                    <%= f.input :email, placeholder: 'juandelacruz@gmail.com' %>
                     <%= f.input :institution_name %>
-                    <%= f.input :year_level %>
+                    <%= f.input :year_level, collection: 1...13 %>
                     <%= f.input :school_year %>
                     <%= f.input :grade %>
-                    <%= f.input :general_avg %>
+                    <%= f.input :general_avg, collection: 1..100 %>
                 </div>
             </div>
         </div>
