@@ -1,5 +1,5 @@
 Fabricator(:student) do
-    id_number {Faker::Number.number(999999)}
+    id_number {Faker::Number.number(6)}
     first_name {Faker::Name.first_name}
     middle_name {Faker::Lorem.characters(1)}
     last_name {Faker::Name.last_name}
@@ -15,7 +15,7 @@ Fabricator(:student) do
     street {Faker::Address.street_address}
     barangay {Faker::Address.state}
     city {Faker::Address.city}
-    postal_code {Faker::Number.number(9999)}
+    postal_code {Faker::Number.number(4)}
     landline {Faker::PhoneNumber.phone_number}
     mobile {Faker::PhoneNumber.cell_phone}
     # lancaster_resident {%}
