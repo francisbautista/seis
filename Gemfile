@@ -42,7 +42,7 @@ gem 'uglifier', '>= 1.3.0'
 #  Utility Gems                     #
 #===================================#
 gem 'turbolinks'
-# gem 'annotate', ">=2.6.0"
+gem 'annotate', ">=2.6.0"
 # gem 'fabrication'
 # gem 'faker'
 # gem 'will_paginate', '~> 3.0'
