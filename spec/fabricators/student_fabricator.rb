@@ -5,7 +5,7 @@ Fabricator(:student) do
     last_name {Faker::Name.last_name}
     admission_date {Faker::Date.backward(14)}
     batch_number {Faker::Number.digit}
-    year_level {Faker::Number.number(14)}
+    year_level {Faker::Number.number(1)}
     section {Faker::Company.name}
     gender { %w(M F).sample }
     birthdate {Faker::Date.backward(500)}
