@@ -1,4 +1,5 @@
 Fabricator(:student) do
+    id_number {Faker::Number.number(999999)}
     first_name {Faker::Name.first_name}
     middle_name {Faker::Lorem.characters(1)}
     last_name {Faker::Name.last_name}
@@ -23,7 +24,7 @@ Fabricator(:student) do
 end
 
 #  id                 :integer          not null, primary key
-#  id_number          :integer
+
 
 #  mobile             :string(255)
 #  email              :string(255)
