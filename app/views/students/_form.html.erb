@@ -23,7 +23,7 @@
                     end_year: Date.today.year - 12, discard_day: false,
                     order: [:month, :day, :year], :label => 'Birthdate:' %>
                     <%= f.input :religion, placeholder: 'Roman Catholic', :label => 'Religion:' %>
-                    <%= f.input :batch_number %>
+                    <%= f.input :batch_number, :label => 'Batch No.:' %>
 
                     <%= f.input :section, :label => 'Section:' %>
                 </div>
@@ -32,15 +32,15 @@
                 <div class="form-inputs">
 
                     <%= f.input :id_number %>
-                    <%= f.input :year_level %>
+                    <%= f.input :year_level, :label => 'Year Level:' %>
                     <%= f.input :nationality, placeholder: 'Filipino' %>
-                    <%= f.input :birth_place %>
-                    <%= f.input :street, hint: 'Mabini Avenue' %>
-                    <%= f.input :barangay, hint: 'Mayamot' %>
-                    <%= f.input :city, hint: 'Trese Martires' %>
-                    <%= f.input :postal_code, input_html: { maxlength: 4 },hint: 'Numeric values only please.' %>
-                    <%= f.input :country %>
-                    <%= f.input :lancaster_resident %>
+                    <%= f.input :birth_place, :label => 'Birth Place:' %>
+                    <%= f.input :street, hint: 'Mabini Avenue', :label => 'Street:' %>
+                    <%= f.input :barangay, hint: 'Mayamot', :label => 'Barangay:' %>
+                    <%= f.input :city, hint: 'Trese Martires', :label => 'City:' %>
+                    <%= f.input :postal_code, input_html: { maxlength: 4 },hint: 'Numeric values only please.',:label => 'Postal Code:' %>
+                    <%= f.input :country,:label => 'Country:', priority: [ "Philippines" ] %>
+                    <%= f.input :lancaster_resident, :label => 'Lancaster Resident:' %>
                 </div>
             </div>
             <div class="col-xs-4 in">
@@ -49,10 +49,10 @@
                     <%= f.input :landline, placeholder: '02-673-XXXX', :label => 'Landline:' %>
                     <%= f.input :mobile, placeholder: '0917-XXX-XXXX',:label => 'Mobile:' %>
                     <%= f.input :email, placeholder: 'juandelacruz@gmail.com', :label => 'Email:' %>
-                    <%= f.input :institution_name %>
-                    <%= f.input :year_level, collection: 1...13 %>
-                    <%= f.input :school_year %>
-                    <%= f.input :grade %>
+                    <%= f.input :institution_name, :label => 'Institution Name:' %>
+                    <%= f.input :year_level, collection: 1...13,:label => 'Year Level:' %>
+                    <%= f.input :school_year, :label => 'School Year:' %>
+                    <%= f.input :grade,:label => 'Grade:' %>
                     <%= f.input :general_avg, collection: 1..100 %>
                 </div>
             </div>
