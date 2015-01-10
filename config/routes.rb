@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :guardianships
   get 'pages/index'
 
-  root "students/index"
 
 
   resources :payments
