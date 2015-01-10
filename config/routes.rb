@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :checklists
+
   get 'pages/index'
 
   resources :guardianships
