@@ -13,6 +13,6 @@
 #  created_at   :datetime
 #  updated_at   :datetime
 #
-
+# Added test class
 class Test < ActiveRecord::Base
 end
