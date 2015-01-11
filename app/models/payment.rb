@@ -15,6 +15,8 @@
 #  updated_at         :datetime
 #
 
+#TODO: add workaround for relationship with Official Receipt value and migration
+
 class Payment < ActiveRecord::Base
     belongs_to :student
 end
