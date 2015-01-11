@@ -19,4 +19,5 @@
 
 class Payment < ActiveRecord::Base
     belongs_to :student
+    #add_migration => official_receipt
 end
