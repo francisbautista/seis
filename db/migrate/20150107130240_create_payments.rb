@@ -4,12 +4,13 @@ class CreatePayments < ActiveRecord::Migration
       t.string :mode
       t.decimal :testing_amount
       t.decimal :reservation_amount
+
+      t.integer :installment_number
+      t.integer :or_number
       t.decimal :tuition_amount
       t.integer :tuition_amount
       t.decimal :discount_rate
       t.text :discount_desc
-      t.integer :installment_number
-      t.integer :or_number
 
       t.timestamps
     end
