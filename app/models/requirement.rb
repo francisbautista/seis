@@ -12,5 +12,6 @@
 #
 
 class Requirement < ActiveRecord::Base
-    has_many :students
+    has_many :student_requirements
+    has_many :students, through: :student_requirements
 end

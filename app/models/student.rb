@@ -40,5 +40,6 @@ class Student < ActiveRecord::Base
     has_many :payments
     has_many :guardianships
     has_many :parents, through: :guardianships
-    has_many :requirements
+    has_many :student_requirements
+    has_many :requirements, through: :student_requirements
 end
