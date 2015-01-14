@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107140258) do
+ActiveRecord::Schema.define(version: 20150114110920) do
+
+  create_table "admissions", force: true do |t|
+    t.string   "last_name"
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "grade_level"
+    t.string   "address"
+    t.string   "mode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "checklists", force: true do |t|
+    t.boolean  "status"
+    t.text     "remarks"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "guardianships", force: true do |t|
     t.integer  "payment_id"

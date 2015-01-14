@@ -16,6 +16,7 @@
 #
 
 #TODO: add workaround for relationship with Official Receipt value and migration
+#TODO: require payment before student creation
 
 class Payment < ActiveRecord::Base
     belongs_to :student
