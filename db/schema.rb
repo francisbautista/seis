@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150114110920) do
+ActiveRecord::Schema.define(version: 20150114163133) do
 
   create_table "admissions", force: true do |t|
     t.string   "last_name"
@@ -65,6 +65,15 @@ ActiveRecord::Schema.define(version: 20150114110920) do
     t.text     "discount_desc"
     t.integer  "installment_number"
     t.integer  "or_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "requirements", force: true do |t|
+    t.string   "name"
+    t.boolean  "status"
+    t.boolean  "required"
+    t.string   "remarks"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
