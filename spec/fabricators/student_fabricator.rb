@@ -18,7 +18,7 @@ Fabricator(:student) do
     postal_code {Faker::Number.number(4)}
     landline {Faker::PhoneNumber.phone_number}
     mobile {Faker::PhoneNumber.cell_phone}
-    # lancaster_resident {%}
+    lancaster_resident {[0, 1].sample }
     email {Faker::Internet.free_email}
 
 end

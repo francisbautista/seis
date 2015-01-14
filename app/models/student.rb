@@ -36,10 +36,20 @@
 #TODO: Add status for activation c/o requirements
 #TODO: Add status for activation c/o admissions
 class Student < ActiveRecord::Base
+    after_create :create_reqs
     validates_presence_of :first_name, :middle_name, :last_name
     has_many :payments
+
     has_many :guardianships
     has_many :parents, through: :guardianships
+
     has_many :student_requirements
     has_many :requirements, through: :student_requirements
+
+    def create_reqs
+        @requirements = Requirement.all
+        @requirements.each do |r|
+            StudentRequirement.create(student_id: self.id, requirement_id: r.id, status: false)
+        end
+    end
 end
