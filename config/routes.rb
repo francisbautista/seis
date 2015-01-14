@@ -1,22 +1,27 @@
 Rails.application.routes.draw do
 
 
+
+
   resources :student_requirements
 
   resources :requirements
-
+  # Maintain relations
   resources :guardianships
+  resources :parents
   get 'pages/index'
 
 
 
+  resources :permits
 
-  resources :tests
   devise_for :users
-  resources :parents
+
 
   resources :students do
       resources :payments
+
+      resources :tests
   end
 
 

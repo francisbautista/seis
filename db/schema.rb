@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150114174402) do
+ActiveRecord::Schema.define(version: 20150114212326) do
 
   create_table "guardianships", force: true do |t|
     t.integer  "payment_id"
@@ -48,6 +48,18 @@ ActiveRecord::Schema.define(version: 20150114174402) do
     t.integer  "tuition_amount"
     t.decimal  "discount_rate"
     t.text     "discount_desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "permits", force: true do |t|
+    t.date     "date"
+    t.string   "level"
+    t.datetime "test_date"
+    t.datetime "release"
+    t.boolean  "report_card"
+    t.boolean  "moral_cert"
+    t.boolean  "recommendation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
