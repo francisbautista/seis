@@ -36,6 +36,7 @@
 #TODO: Add status for activation c/o requirements
 #TODO: Add status for activation c/o admissions
 class Student < ActiveRecord::Base
+    validates_presence_of :first_name, :middle_name, :last_name
     has_many :payments
     has_many :guardianships
     has_many :parents, through: :guardianships

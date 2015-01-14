@@ -1,7 +1,6 @@
 Fabricator(:requirement) do
 
     name {Faker::Commerce.product_name}
-    status { [0, 1].sample }
     required {[0, 1].sample }
     remarks {Faker::Hacker.say_something_smart}
 end

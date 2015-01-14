@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :student_requirements
+
   resources :requirements
 
   resources :guardianships

@@ -13,24 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150114163133) do
 
-  create_table "admissions", force: true do |t|
-    t.string   "last_name"
-    t.string   "first_name"
-    t.string   "middle_name"
-    t.string   "grade_level"
-    t.string   "address"
-    t.string   "mode"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "checklists", force: true do |t|
-    t.boolean  "status"
-    t.text     "remarks"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "guardianships", force: true do |t|
     t.integer  "payment_id"
     t.integer  "student_id"
@@ -60,11 +42,11 @@ ActiveRecord::Schema.define(version: 20150114163133) do
     t.string   "mode"
     t.decimal  "testing_amount"
     t.decimal  "reservation_amount"
-    t.decimal  "tuition_amount"
-    t.decimal  "discount_rate"
-    t.text     "discount_desc"
     t.integer  "installment_number"
     t.integer  "or_number"
+    t.integer  "tuition_amount"
+    t.decimal  "discount_rate"
+    t.text     "discount_desc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
