@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  
+
 
   # GET /students
   # GET /students.json
@@ -13,6 +13,7 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
       @requirements = Requirement.all
+      @sr = StudentRequirement.all
   end
 
   # GET /students/new
