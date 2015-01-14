@@ -2,6 +2,7 @@ class CreatePayments < ActiveRecord::Migration
   def change
     create_table :payments do |t|
       t.string :mode
+      t.integer :student_id
       t.decimal :testing_amount
       t.decimal :reservation_amount
 

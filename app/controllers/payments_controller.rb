@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
-  before_action :set_payment, only: [:show, :edit, :update, :destroy]
+    before_filter :set_student
+    before_action :set_payment, only: [:show, :edit, :update, :destroy]
 
   # GET /payments
   # GET /payments.json
@@ -15,6 +16,7 @@ class PaymentsController < ApplicationController
   # GET /payments/new
   def new
     @payment = Payment.new
+    @payment = @student.payments.new
   end
 
   # GET /payments/1/edit
@@ -25,16 +27,15 @@ class PaymentsController < ApplicationController
   # POST /payments.json
   def create
     @payment = Payment.new(payment_params)
+    @payment = @student.payments.new(payment_params)
 
-    respond_to do |format|
-      if @payment.save
-        format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
-        format.json { render :show, status: :created, location: @payment }
-      else
-        format.html { render :new }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
-      end
+
+    if @payment.save
+        redirect_to student_payments_path
+    else
+        render :action => 'new'
     end
+
   end
 
   # PATCH/PUT /payments/1
@@ -67,8 +68,12 @@ class PaymentsController < ApplicationController
       @payment = Payment.find(params[:id])
     end
 
+    def set_student
+        @student = Student.find(params[:student_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def payment_params
-      params.require(:payment).permit(:mode, :testing_amount, :reservation_amount, :tuition_amount, :discount_rate, :discount_desc, :installment_number, :or_number)
+      params.require(:payment).permit(:mode, :testing_amount, :reservation_amount, :tuition_amount, :discount_rate, :discount_desc, :installment_number, :or_number, :student_id)
     end
 end

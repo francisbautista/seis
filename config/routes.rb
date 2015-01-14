@@ -10,13 +10,14 @@ Rails.application.routes.draw do
 
 
 
-  resources :payments
 
   resources :tests
   devise_for :users
   resources :parents
 
-  resources :students
+  resources :students do
+      resources :payments
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

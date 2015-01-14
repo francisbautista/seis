@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150114174402) do
 
   create_table "payments", force: true do |t|
     t.string   "mode"
+    t.integer  "student_id"
     t.decimal  "testing_amount"
     t.decimal  "reservation_amount"
     t.integer  "installment_number"
