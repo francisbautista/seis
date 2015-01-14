@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  resources :admissions
-
-  resources :checklists
-
 
 
   resources :guardianships

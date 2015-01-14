@@ -33,6 +33,8 @@
 #  updated_at         :datetime
 #
 
+#TODO: Add status for activation c/o requirements
+#TODO: Add status for activation c/o admissions
 class Student < ActiveRecord::Base
     has_many :payments
     has_many :guardianships
