@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @requirement.name %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @requirement.status %>
+</p>
+
+<p>
+  <strong>Required:</strong>
+  <%= @requirement.required %>
+</p>
+
+<p>
+  <strong>Remarks:</strong>
+  <%= @requirement.remarks %>
+</p>
+
+<%= link_to 'Edit', edit_requirement_path(@requirement) %> |
+<%= link_to 'Back', requirements_path %>
