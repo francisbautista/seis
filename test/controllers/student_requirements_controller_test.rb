@@ -18,7 +18,7 @@ class StudentRequirementsControllerTest < ActionController::TestCase
 
   test "should create student_requirement" do
     assert_difference('StudentRequirement.count') do
-      post :create, student_requirement: { status: @student_requirement.status }
+      post :create, student_requirement: { requirement_id: @student_requirement.requirement_id, status: @student_requirement.status, student_id: @student_requirement.student_id }
     end
 
     assert_redirected_to student_requirement_path(assigns(:student_requirement))
@@ -35,7 +35,7 @@ class StudentRequirementsControllerTest < ActionController::TestCase
   end
 
   test "should update student_requirement" do
-    patch :update, id: @student_requirement, student_requirement: { status: @student_requirement.status }
+    patch :update, id: @student_requirement, student_requirement: { requirement_id: @student_requirement.requirement_id, status: @student_requirement.status, student_id: @student_requirement.student_id }
     assert_redirected_to student_requirement_path(assigns(:student_requirement))
   end
 
