@@ -37,6 +37,7 @@
 #TODO: Add status for activation c/o admissions
 class Student < ActiveRecord::Base
     after_create :create_reqs
+    # addded rewss
     validates_presence_of :first_name, :middle_name, :last_name
     has_many :payments
 

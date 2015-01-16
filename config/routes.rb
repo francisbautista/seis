@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :parents
   get 'pages/index'
 
-  root_to: "pages#index"
+  root to: "pages#index"
 
   resources :permits
   devise_for :users

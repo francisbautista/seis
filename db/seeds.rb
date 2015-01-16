@@ -11,5 +11,5 @@ email: 'yuri@gmail.com', password: 'password')
 
 
 
-#30.times { Fabricate(:student) }
+200.times { Fabricate(:student) }
 5.times { Fabricate(:requirement) }
