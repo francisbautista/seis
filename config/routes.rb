@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 
   resources :permits
   devise_for :users
-
+  resources :payments
   resources :students do
-      resources :payments
+
       resources :tests
   end
 end
