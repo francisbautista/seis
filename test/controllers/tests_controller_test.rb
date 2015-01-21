@@ -18,7 +18,7 @@ class TestsControllerTest < ActionController::TestCase
 
   test "should create test" do
     assert_difference('Test.count') do
-      post :create, test: { first_name: @test.first_name, last_name: @test.last_name, middle_name: @test.middle_name, test_count: @test.test_count, test_number: @test.test_number, test_remarks: @test.test_remarks, test_status: @test.test_status }
+      post :create, test: { remarks: @test.remarks, status: @test.status, student_id: @test.student_id, test_number: @test.test_number }
     end
 
     assert_redirected_to test_path(assigns(:test))
@@ -35,7 +35,7 @@ class TestsControllerTest < ActionController::TestCase
   end
 
   test "should update test" do
-    patch :update, id: @test, test: { first_name: @test.first_name, last_name: @test.last_name, middle_name: @test.middle_name, test_count: @test.test_count, test_number: @test.test_number, test_remarks: @test.test_remarks, test_status: @test.test_status }
+    patch :update, id: @test, test: { remarks: @test.remarks, status: @test.status, student_id: @test.student_id, test_number: @test.test_number }
     assert_redirected_to test_path(assigns(:test))
   end
 

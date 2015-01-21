@@ -6,33 +6,18 @@
 </p>
 
 <p>
-  <strong>First name:</strong>
-  <%= @test.first_name %>
+  <strong>Status:</strong>
+  <%= @test.status %>
 </p>
 
 <p>
-  <strong>Middle name:</strong>
-  <%= @test.middle_name %>
+  <strong>Remarks:</strong>
+  <%= @test.remarks %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
-  <%= @test.last_name %>
-</p>
-
-<p>
-  <strong>Test count:</strong>
-  <%= @test.test_count %>
-</p>
-
-<p>
-  <strong>Test status:</strong>
-  <%= @test.test_status %>
-</p>
-
-<p>
-  <strong>Test remarks:</strong>
-  <%= @test.test_remarks %>
+  <strong>Student:</strong>
+  <%= @test.student_id %>
 </p>
 
 <%= link_to 'Edit', edit_test_path(@test) %> |

@@ -1,1 +1,1 @@
-json.extract! @test, :id, :test_number, :first_name, :middle_name, :last_name, :test_count, :test_status, :test_remarks, :created_at, :updated_at
+json.extract! @test, :id, :test_number, :status, :remarks, :student_id, :created_at, :updated_at

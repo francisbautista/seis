@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150114212326) do
+ActiveRecord::Schema.define(version: 20150121083256) do
 
   create_table "guardianships", force: true do |t|
     t.integer  "payment_id"
@@ -113,12 +113,9 @@ ActiveRecord::Schema.define(version: 20150114212326) do
 
   create_table "tests", force: true do |t|
     t.integer  "test_number"
-    t.string   "first_name"
-    t.string   "middle_name"
-    t.string   "last_name"
-    t.integer  "test_count"
-    t.boolean  "test_status"
-    t.text     "test_remarks"
+    t.boolean  "status"
+    t.text     "remarks"
+    t.integer  "student_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
