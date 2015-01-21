@@ -8,6 +8,7 @@ class CreatePermits < ActiveRecord::Migration
       t.boolean :report_card
       t.boolean :moral_cert
       t.boolean :recommendation
+      t.integer :student_id
 
       t.timestamps
     end

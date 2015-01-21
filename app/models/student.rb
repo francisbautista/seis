@@ -44,6 +44,7 @@ class Student < ActiveRecord::Base
     has_many :guardianships
     has_many :parents, through: :guardianships
     has_many :tests
+    has_many :permits
     has_many :student_requirements
     has_many :requirements, through: :student_requirements
 

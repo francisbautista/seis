@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20150121083256) do
     t.boolean  "report_card"
     t.boolean  "moral_cert"
     t.boolean  "recommendation"
+    t.integer  "student_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -10,11 +10,12 @@ Rails.application.routes.draw do
 
   root to: "pages#index"
 
-  resources :permits
+
   devise_for :users
 
   resources :students do
       resources :payments
       resources :tests
+      resources :permits
   end
 end
