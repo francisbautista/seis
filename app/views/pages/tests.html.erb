@@ -14,11 +14,11 @@
     <tbody>
         <% @tests.each do |test| %>
         <tr>
-            td><%= test.student.first_name %> <%= test.student.last_name %></td>
+            <td><%= test.student.first_name %> <%= test.student.last_name %></td>
             <td><%= test.test_number %></td>
             <td><%= test.status %></td>
             <td><%= test.remarks %></td>
-            <td><%= link_to 'Show', test %></td>
+
         </tr>
         <% end %>
     </tbody>

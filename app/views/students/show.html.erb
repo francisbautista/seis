@@ -190,7 +190,7 @@
             <td><%= payment.discount_desc %></td>
             <td><%= payment.installment_number %></td>
             <td><%= payment.or_number %></td>
-            <td><%= link_to 'Show', student_payments_path %></td>
+            <td><%= link_to 'Show', student_payments_path(@student) %></td>
 
         </tr>
         <% end %>
