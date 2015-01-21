@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   # Maintain relations
   resources :guardianships
   resources :parents
-  get 'pages/index'
+  %w[index payments].each do |page|
+      get page, controller: 'pages', action: page
+  end
 
   root to: "pages#index"
-  
+
   devise_for :users
 
   resources :students do
