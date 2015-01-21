@@ -162,6 +162,72 @@
     <% end %>
 <% end %>
 
+<h1>Listing payments for <%= @student.first_name %></h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Mode</th>
+            <th>Testing amount</th>
+            <th>Reservation amount</th>
+            <th>Tuition amount</th>
+            <th>Discount rate</th>
+            <th>Discount desc</th>
+            <th>Installment number</th>
+            <th>Or number</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @student.payments.each do |payment| %>
+        <tr>
+            <td><%= payment.mode %></td>
+            <td><%= payment.testing_amount %></td>
+            <td><%= payment.reservation_amount %></td>
+            <td><%= payment.tuition_amount %></td>
+            <td><%= payment.discount_rate %></td>
+            <td><%= payment.discount_desc %></td>
+            <td><%= payment.installment_number %></td>
+            <td><%= payment.or_number %></td>
+            <td><%= link_to 'Show', student_payments_path %></td>
+
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<h1>Listing tests</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Test number</th>
+            <th>Status</th>
+            <th>Remarks</th>
+            <th>Student</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @student.tests.each do |test| %>
+        <tr>
+            <td><%= test.test_number %></td>
+            <td><%= test.status %></td>
+            <td><%= test.remarks %></td>
+            <td><%= test.student_id %></td>
+            <td><%= link_to 'Show', test %></td>
+            <td><%= link_to 'Edit', edit_student_test_path(test) %></td>
+            <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+
+
 
 <%= link_to 'Add New Payment', new_student_payment_path(@student), :class=>"btn btn-small btn-success pull-right"  %>
 <%= link_to 'Add New Test', new_student_test_path(@student), :class=>"btn btn-small btn-success pull-right"  %>
