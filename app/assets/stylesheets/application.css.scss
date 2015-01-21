@@ -16,12 +16,18 @@
      max-width: 100%;
  }
 
+ .navbar-default .navbar-nav > li:hover {
+     background-color:#239a4b;
+ }
 
 // Navbar Styling
  .navbar-default {
      background-color: $green-brand;
  }
  .navbar-default .navbar-nav > li > a {
+     color: #fff;
+ }
+ .navbar-default .navbar-nav > li > a:hover {
      color: #fff;
  }
 
