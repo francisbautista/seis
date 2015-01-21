@@ -12,6 +12,9 @@ class CreatePermits < ActiveRecord::Migration
       t.boolean :moral_cert
       t.boolean :recommendation
       t.integer :student_id
+      t.integer :or_number
+      t.decimal :amount
+      t.boolean :paid_status
 
       t.timestamps
     end

@@ -18,7 +18,7 @@ class PermitsController < InheritedResources::Base
   private
 
     def permit_params
-      params.require(:permit).permit(:date, :level, :test_date, :release, :report_card, :moral_cert, :recommendation, :student_id)
+      params.require(:permit).permit(:date, :level, :test_date, :release, :report_card, :moral_cert, :recommendation, :student_id, :or_number, :amount, :paid_status)
     end
 
     def set_student

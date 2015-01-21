@@ -9,6 +9,7 @@ class CreateAssessments < ActiveRecord::Migration
       t.integer :installment_number
       t.integer :or_number
       t.integer :student_id
+      t.boolean :paid_status
 
       t.timestamps
     end

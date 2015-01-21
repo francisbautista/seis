@@ -18,7 +18,7 @@ class ReservationsController < InheritedResources::Base
   private
 
     def reservation_params
-      params.require(:reservation).permit(:status, :remarks, :amount, :student_id, :or_number)
+      params.require(:reservation).permit(:paid_status, :remarks, :amount, :student_id, :or_number)
     end
     def set_student
         @student = Student.find(params[:student_id])
