@@ -1,6 +1,45 @@
-<h1 style="color:#186636;">Listing Payments</h1>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h2 class="panel-title"><h3>Assessment Payment List</h3></h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Mode</th>
+                    <th>Installment</th>
+                    <th>Tuition Amount</th>
+                    <th>Discount Rate</th>
+                    <th>Discount Description</th>
+                    <th>Installment Number</th>
+                    <th>OR Number</th>
+                    <th>Payment Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @payments.each do |payment| %>
+                <tr>
+                    <th scope="row"><%= payment.student.first_name %> <%= payment.student.last_name %></td>
+                    <td><%= payment.mode %></th>
+                    <td><%= payment.installment %></td>
+                    <td><%= payment.tuition %></td>
+                    <td><%= payment.discount %></td>
+                    <td><%= payment.discount_desc %></td>
+                    <td><%= payment.installment_number %></td>
+                    <td><%= payment.or_number %></td>
+                    <td><%= payment.paid_status %></td>
+                    <td><%= link_to 'Show', student_assessment_path(payment.student.id, payment) %></td>
+                </tr>
+                    <% end %>
+                </tbody>
+            </table>
 
-<table>
+        </div>
+    </div>
+
+<!-- <table>
     <thead>
         <tr>
             <th>Student</th>
@@ -33,4 +72,4 @@
         </tr>
         <% end %>
     </tbody>
-</table>
+</table> -->

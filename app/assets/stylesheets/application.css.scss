@@ -8,7 +8,9 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import '_globals';
-
+     button > a:visited{
+     color: #fff;
+ }
  body {
      background: $bg-brand;
      font-size: 1.5em;

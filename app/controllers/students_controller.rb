@@ -15,6 +15,7 @@ class StudentsController < ApplicationController
   def show
       @requirements = Requirement.all
       @sr = StudentRequirement.all
+      @assessments = @student.assessments.all
   end
 
   # GET /students/new
