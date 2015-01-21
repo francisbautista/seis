@@ -52,25 +52,6 @@ ActiveRecord::Schema.define(version: 20150121194549) do
     t.datetime "updated_at"
   end
 
-  create_table "permits", force: true do |t|
-    t.date     "date"
-    t.string   "level"
-    t.datetime "test_date"
-    t.datetime "release"
-    t.integer  "test_number"
-    t.boolean  "status"
-    t.text     "remarks"
-    t.boolean  "report_card"
-    t.boolean  "moral_cert"
-    t.boolean  "recommendation"
-    t.integer  "student_id"
-    t.integer  "or_number"
-    t.decimal  "amount"
-    t.boolean  "paid_status"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "requirements", force: true do |t|
     t.string   "name"
     t.boolean  "required"
@@ -124,6 +105,7 @@ ActiveRecord::Schema.define(version: 20150121194549) do
     t.integer  "school_year"
     t.string   "grade"
     t.integer  "general_avg"
+    t.boolean  "enrollment_status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

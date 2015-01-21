@@ -40,5 +40,7 @@
   <%= @assessment.student_id %>
 </p>
 
-<%= link_to 'Edit', edit_assessment_path(@assessment) %> |
-<%= link_to 'Back', assessments_path %>
+<p>
+    <strong>Tuition Net:</strong>
+    <%= @discounted_tuition %>
+</p>

@@ -5,6 +5,7 @@
         <tr>
             <th>Student</th>
             <th>Mode</th>
+            <th>Installment</th>
             <th>Testing amount</th>
             <th>Reservation amount</th>
             <th>Tuition amount</th>
@@ -12,6 +13,7 @@
             <th>Discount desc</th>
             <th>Installment number</th>
             <th>Or number</th>
+            <th>Payment Status</th>
             <th colspan="3"></th>
         </tr>
     </thead>
@@ -21,11 +23,13 @@
         <tr>
             <td><%= payment.student.first_name %> <%= payment.student.last_name %></td>
             <td><%= payment.mode %></td>
+            <td><%= payment.installment %></td>
             <td><%= payment.tuition %></td>
             <td><%= payment.discount %></td>
             <td><%= payment.discount_desc %></td>
             <td><%= payment.installment_number %></td>
             <td><%= payment.or_number %></td>
+            <td><%= payment.paid_status %></td>
         </tr>
         <% end %>
     </tbody>
