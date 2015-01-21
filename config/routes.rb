@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   resources :requirements
   resources :student_requirements
   # Maintain relations
@@ -16,7 +17,8 @@ Rails.application.routes.draw do
 
   resources :students do
       resources :permits
-      resources :payments
+      resources :reservations
+      resources :assessments      
       resources :tests
   end
 end

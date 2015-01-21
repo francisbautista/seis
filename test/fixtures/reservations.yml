@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: false
+  remarks: MyString
+  amount: 9.99
+  student_id: 1
+  or_number: 1
+
+two:
+  status: false
+  remarks: MyString
+  amount: 9.99
+  student_id: 1
+  or_number: 1

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Installment:</strong>
+  <%= @assessment.installment %>
+</p>
+
+<p>
+  <strong>Mode:</strong>
+  <%= @assessment.mode %>
+</p>
+
+<p>
+  <strong>Tuition:</strong>
+  <%= @assessment.tuition %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @assessment.discount %>
+</p>
+
+<p>
+  <strong>Discount desc:</strong>
+  <%= @assessment.discount_desc %>
+</p>
+
+<p>
+  <strong>Installment number:</strong>
+  <%= @assessment.installment_number %>
+</p>
+
+<p>
+  <strong>Or number:</strong>
+  <%= @assessment.or_number %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @assessment.student_id %>
+</p>
+
+<%= link_to 'Edit', edit_assessment_path(@assessment) %> |
+<%= link_to 'Back', assessments_path %>

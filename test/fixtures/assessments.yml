@@ -1,21 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-# added some YML values
+
 one:
+  installment: MyString
   mode: MyString
-  testing_amount: 9.99
-  reservation_amount: 9.99
-  tuition_amount: 9.99
-  discount_rate: 9.99
+  tuition: 9.99
+  discount: 9.99
   discount_desc: MyText
   installment_number: 1
   or_number: 1
+  student_id: 1
 
 two:
+  installment: MyString
   mode: MyString
-  testing_amount: 9.99
-  reservation_amount: 9.99
-  tuition_amount: 9.99
-  discount_rate: 9.99
+  tuition: 9.99
+  discount: 9.99
   discount_desc: MyText
   installment_number: 1
   or_number: 1
+  student_id: 1
