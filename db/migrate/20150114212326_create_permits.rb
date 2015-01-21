@@ -5,6 +5,9 @@ class CreatePermits < ActiveRecord::Migration
       t.string :level
       t.datetime :test_date
       t.datetime :release
+      t.integer :test_number
+      t.boolean :status
+      t.text :remarks
       t.boolean :report_card
       t.boolean :moral_cert
       t.boolean :recommendation
