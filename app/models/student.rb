@@ -40,7 +40,7 @@ class Student < ActiveRecord::Base
     # addded rewss
     validates_presence_of :first_name, :middle_name, :last_name
     has_many :assessments
-
+    has_many :reservations
     has_many :guardianships
     has_many :parents, through: :guardianships
     has_many :tests

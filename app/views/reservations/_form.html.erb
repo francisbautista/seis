@@ -1,4 +1,4 @@
-<%= simple_form_for(@reservation) do |f| %>
+<%= simple_form_for([@student, @reservation]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -13,3 +13,5 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+
+<!-- <%= f.input :student_id, :as => :hidden, :input_html => { :value => @student.id } %> -->

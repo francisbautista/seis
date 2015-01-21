@@ -6,4 +6,3 @@ class RequirementsController < InheritedResources::Base
       params.require(:requirement).permit(:name, :status, :required, :remarks)
     end
 end
-

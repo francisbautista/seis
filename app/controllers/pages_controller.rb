@@ -3,10 +3,10 @@ class PagesController < ApplicationController
 
     end
     def payments
-        @payments = Payment.all
+        @payments = Assessment.all
     end
 
     def tests
-        @tests = Test.all 
+        @tests = Permit.all
     end
 end

@@ -168,8 +168,6 @@
     <thead>
         <tr>
             <th>Mode</th>
-            <th>Testing amount</th>
-            <th>Reservation amount</th>
             <th>Tuition amount</th>
             <th>Discount rate</th>
             <th>Discount desc</th>
@@ -183,10 +181,8 @@
         <% @student.assessments.each do |assessment| %>
         <tr>
             <td><%= assessment.mode %></td>
-            <td><%= assessment.testing_amount %></td>
-            <td><%= assessment.reservation_amount %></td>
-            <td><%= assessment.tuition_amount %></td>
-            <td><%= assessment.discount_rate %></td>
+            <td><%= assessment.tuition %></td>
+            <td><%= assessment.discount%></td>
             <td><%= assessment.discount_desc %></td>
             <td><%= assessment.installment_number %></td>
             <td><%= assessment.or_number %></td>
@@ -203,6 +199,7 @@
 
 
 <%= link_to 'Add New assessment', new_student_assessment_path(@student), :class=>"btn btn-small btn-success pull-right"  %>
+<%= link_to 'Add New Reservation', new_student_reservation_path(@student), :class=>"btn btn-small btn-success pull-right"  %>
 <%= link_to 'Add New Permit', new_student_permit_path(@student), :class=>"btn btn-small btn-success pull-right"  %>
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
