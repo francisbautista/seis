@@ -1,5 +1,6 @@
 class ReservationsController < InheritedResources::Base
     before_filter :set_student
+    before_action :authenticate_user!
     def index
         @reservations = @student.reservations.all
     end

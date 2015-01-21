@@ -1,4 +1,5 @@
 class RequirementsController < InheritedResources::Base
+    before_action :authenticate_user!
 
   private
 

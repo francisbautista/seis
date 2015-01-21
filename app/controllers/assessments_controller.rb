@@ -1,4 +1,5 @@
 class AssessmentsController < InheritedResources::Base
+    before_action :authenticate_user!
     before_filter :set_student
     def index
         @assessments = @student.assessments.all

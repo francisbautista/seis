@@ -1,5 +1,6 @@
 class TpermitsController < InheritedResources::Base
     before_filter :set_student
+    before_action :authenticate_user!
     def index
         @tpermits = @student.tpermits.all
     end

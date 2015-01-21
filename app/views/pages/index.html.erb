@@ -1,4 +1,4 @@
-<h1 style="color:#186636;">Welcome, Yuri</h1>
+<h1 style="color:#186636;"><%if user_signed_in?%> Welcome,  <%= current_user.first_name %> <%end%></h1>
 <p>Lorem ipsum sicit dolor</p>
 
 <div class="row">
