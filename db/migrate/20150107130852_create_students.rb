@@ -28,7 +28,7 @@ class CreateStudents < ActiveRecord::Migration
       t.integer :school_year
       t.string :grade
       t.integer :general_avg
-
+      t.boolean :enrollment_status
       t.timestamps
     end
   end
