@@ -1,1 +1,34 @@
 <h1>Listing Payments</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Mode</th>
+            <th>Testing amount</th>
+            <th>Reservation amount</th>
+            <th>Tuition amount</th>
+            <th>Discount rate</th>
+            <th>Discount desc</th>
+            <th>Installment number</th>
+            <th>Or number</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @payments.each do |payment| %>
+        <tr>
+            <td><%= payment.mode %></td>
+            <td><%= payment.testing_amount %></td>
+            <td><%= payment.reservation_amount %></td>
+            <td><%= payment.tuition_amount %></td>
+            <td><%= payment.discount_rate %></td>
+            <td><%= payment.discount_desc %></td>
+            <td><%= payment.installment_number %></td>
+            <td><%= payment.or_number %></td>
+            <td><%= link_to 'Show', student_payments_path %></td>
+
+        </tr>
+        <% end %>
+    </tbody>
+</table>
