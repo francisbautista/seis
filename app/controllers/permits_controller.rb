@@ -1,7 +1,6 @@
 class PermitsController < InheritedResources::Base
     before_filter :set_student
     def index
-        #@permits = permit.all
         @permits = @student.permits.all
     end
 
