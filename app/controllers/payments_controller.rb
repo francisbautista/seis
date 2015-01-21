@@ -5,7 +5,6 @@ class PaymentsController < ApplicationController
   # GET /payments
   # GET /payments.json
   def index
-    #@payments = Payment.all
     @payments = @student.payments.all
   end
 
