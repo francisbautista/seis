@@ -5,4 +5,8 @@ class PagesController < ApplicationController
     def payments
         @payments = Payment.all
     end
+
+    def tests
+        @tests = Test.all 
+    end
 end
