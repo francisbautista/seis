@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :tests
-
   resources :student_requirements
   resources :requirements
+
   # Maintain relations
   resources :guardianships
   resources :parents
