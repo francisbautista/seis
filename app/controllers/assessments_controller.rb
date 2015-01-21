@@ -1,6 +1,7 @@
 class AssessmentsController < InheritedResources::Base
     before_action :authenticate_user!
     before_filter :set_student
+    # before_filter :set_assessment
     def index
         @assessments = @student.assessments.all
     end
@@ -19,6 +20,19 @@ class AssessmentsController < InheritedResources::Base
         @assessment = Assessment.new
         @assessment = @student.assessments.new
     end
+
+    def update
+        @assessment = Assessment.find(params[:id])
+        respond_to do |format|
+            if @assessment.update(assessment_params)
+                format.html { redirect_to student_assessment_path, notice: 'assessment was successfully updated.' }
+                format.json { head :no_content }
+            else
+                format.html { render action: 'edit' }
+                format.json { render json: @assessment.errors, status: :unprocessable_entity }
+            end
+        end
+    end
   private
 
     def assessment_params
@@ -27,5 +41,8 @@ class AssessmentsController < InheritedResources::Base
 
     def set_student
         @student = Student.find(params[:student_id])
+    end
+    def set_assessment
+        @assessment = Assessment.find(params[:id])
     end
 end
