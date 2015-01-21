@@ -13,16 +13,14 @@
   </thead>
 
   <tbody>
-    <% @reservations.each do |reservation| %>
+    <% @student.reservations.each do |reservation| %>
       <tr>
         <td><%= reservation.status %></td>
         <td><%= reservation.remarks %></td>
         <td><%= reservation.amount %></td>
         <td><%= reservation.student_id %></td>
         <td><%= reservation.or_number %></td>
-        <td><%= link_to 'Show', reservation %></td>
-        <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
-        <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Reservation', new_reservation_path %>
+<%= link_to 'New Reservation', new_student_reservation_path %>

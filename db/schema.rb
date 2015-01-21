@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121190134) do
+ActiveRecord::Schema.define(version: 20150121194549) do
 
   create_table "assessments", force: true do |t|
     t.string   "installment"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150121190134) do
     t.integer  "installment_number"
     t.integer  "or_number"
     t.integer  "student_id"
+    t.boolean  "paid_status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,29 +52,21 @@ ActiveRecord::Schema.define(version: 20150121190134) do
     t.datetime "updated_at"
   end
 
-  create_table "payments", force: true do |t|
-    t.string   "mode"
-    t.integer  "student_id"
-    t.decimal  "testing_amount"
-    t.decimal  "reservation_amount"
-    t.integer  "installment_number"
-    t.integer  "or_number"
-    t.integer  "tuition_amount"
-    t.decimal  "discount_rate"
-    t.text     "discount_desc"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "permits", force: true do |t|
     t.date     "date"
     t.string   "level"
     t.datetime "test_date"
     t.datetime "release"
+    t.integer  "test_number"
+    t.boolean  "status"
+    t.text     "remarks"
     t.boolean  "report_card"
     t.boolean  "moral_cert"
     t.boolean  "recommendation"
     t.integer  "student_id"
+    t.integer  "or_number"
+    t.decimal  "amount"
+    t.boolean  "paid_status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -87,11 +80,11 @@ ActiveRecord::Schema.define(version: 20150121190134) do
   end
 
   create_table "reservations", force: true do |t|
-    t.boolean  "status"
     t.string   "remarks"
     t.decimal  "amount"
     t.integer  "student_id"
     t.integer  "or_number"
+    t.boolean  "paid_status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -135,11 +128,20 @@ ActiveRecord::Schema.define(version: 20150121190134) do
     t.datetime "updated_at"
   end
 
-  create_table "tests", force: true do |t|
+  create_table "tpermits", force: true do |t|
+    t.date     "date"
+    t.string   "level"
+    t.datetime "test_date"
     t.integer  "test_number"
     t.boolean  "status"
     t.text     "remarks"
+    t.boolean  "report_card"
+    t.boolean  "moral_cert"
+    t.boolean  "recommendation"
     t.integer  "student_id"
+    t.integer  "or_number"
+    t.decimal  "amount"
+    t.boolean  "paid_status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

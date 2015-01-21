@@ -1,0 +1,1 @@
+json.extract! @tpermit, :id, :date, :level, :test_date, :test_number, :status, :remarks, :report_card, :moral_cert, :recommendation, :student_id, :or_number, :amount, :paid_status, :created_at, :updated_at

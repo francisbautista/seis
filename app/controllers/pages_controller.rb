@@ -7,6 +7,10 @@ class PagesController < ApplicationController
     end
 
     def tests
-        @tests = Permit.all
+        @tests = Tpermit.all
+    end
+
+    def reservations
+        @reservations = Reservation.all
     end
 end

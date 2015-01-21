@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+
+
   resources :requirements
   resources :student_requirements
   # Maintain relations
   resources :guardianships
   resources :parents
-  %w[index payments tests].each do |page|
+  %w[index payments tests reservations].each do |page|
       get page, controller: 'pages', action: page
   end
 
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :students do
-      resources :permits
+      resources :tpermits
       resources :reservations
       resources :assessments
   end

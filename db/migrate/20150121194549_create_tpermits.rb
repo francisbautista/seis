@@ -1,10 +1,9 @@
-class CreatePermits < ActiveRecord::Migration
+class CreateTpermits < ActiveRecord::Migration
   def change
-    create_table :permits do |t|
+    create_table :tpermits do |t|
       t.date :date
       t.string :level
       t.datetime :test_date
-      t.datetime :release
       t.integer :test_number
       t.boolean :status
       t.text :remarks
