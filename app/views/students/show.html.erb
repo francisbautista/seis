@@ -257,11 +257,14 @@
 </div>
 
 
-
-<h1>Listing requirements</h1>
-<% @student.student_requirements.in_groups_of(3, false).each do |s_array| %>
-    <% for s in s_array %>
-        <table>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title"><h2>Requirements</h2></h3>
+    </div>
+    <div class="panel-body">
+        <% @student.student_requirements.in_groups_of(3, false).each do |s_array| %>
+        <% for s in s_array %>
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -281,10 +284,13 @@
                 </tr>
             </tbody>
         </table>
-    <% end %>
-<% end %>
+        <% end %>
+        <% end %>
+    </div>
+</div>
 
-<br>
+
+
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

@@ -16,6 +16,7 @@ class StudentsController < ApplicationController
       @requirements = Requirement.all
       @sr = StudentRequirement.all
       @assessments = @student.assessments.all
+      @tpermits = @student.tpermits.all
   end
 
   # GET /students/new
