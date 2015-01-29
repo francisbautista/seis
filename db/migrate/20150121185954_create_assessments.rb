@@ -1,4 +1,5 @@
 class CreateAssessments < ActiveRecord::Migration
+    #TODO: divide tution per installment? Validate with PM group due to cancellation of assessment module
   def change
     create_table :assessments do |t|
       t.string :installment
