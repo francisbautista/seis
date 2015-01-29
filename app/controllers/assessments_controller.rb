@@ -32,7 +32,7 @@ class AssessmentsController < InheritedResources::Base
         end
     end
   private
-
+    # TODO: Purge assessment params of unnecessary validations
     def assessment_params
       params.require(:assessment).permit(:installment, :mode, :tuition, :discount, :discount_desc, :installment_number, :or_number, :student_id, :paid_status)
     end
