@@ -34,6 +34,8 @@
 #
 
 #TODO: Add status for activation c/o requirements
+#TODO: Create dropdown for old or new students
+#TODO: Change View Students to 'All Students'
 
 class Student < ActiveRecord::Base
     after_create :create_reqs

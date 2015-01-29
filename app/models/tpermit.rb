@@ -1,3 +1,5 @@
+# TODO: Segment test date division? Or is it to the guidance's prerogative?
+
 # == Schema Information
 #
 # Table name: tpermits
