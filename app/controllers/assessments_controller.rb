@@ -9,10 +9,8 @@ class AssessmentsController < InheritedResources::Base
     # GET /assessments/1
     # GET /assessments/1.json
     def show
-
         @assessment = Assessment.find(params[:id])
-        @discounted_tuition = @assessment.tuition * ((100-@assessment.discount)*0.01)
-
+        # @discounted_tuition = @assessment.tuition * ((100-@assessment.discount)*0.01)
     end
 
     # GET /assessments/new
