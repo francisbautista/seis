@@ -34,7 +34,6 @@
 #
 
 #TODO: Add status for activation c/o requirements
-#TODO: Add status for activation c/o admissions
 class Student < ActiveRecord::Base
     after_create :create_reqs
     # addded rewss
