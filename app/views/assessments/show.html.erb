@@ -11,21 +11,6 @@
 </p>
 
 <p>
-  <strong>Tuition:</strong>
-  <%= @assessment.tuition %>
-</p>
-
-<p>
-  <strong>Discount:</strong>
-  <%= @assessment.discount %>
-</p>
-
-<p>
-  <strong>Discount desc:</strong>
-  <%= @assessment.discount_desc %>
-</p>
-
-<p>
   <strong>Installment number:</strong>
   <%= @assessment.installment_number %>
 </p>
@@ -38,11 +23,6 @@
 <p>
   <strong>Student:</strong>
   <%= @assessment.student_id %>
-</p>
-
-<p>
-    <strong>Tuition Net:</strong>
-    <%= @discounted_tuition %>
 </p>
 
 <%= link_to 'Edit', edit_student_assessment_path(@student, @assessment) %>
