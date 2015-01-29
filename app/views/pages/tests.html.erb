@@ -22,7 +22,8 @@
                     <td><%= test.status %></td>
                     <td><%= test.remarks %></td>
                     <td><%= test.paid_status %></td>
-                    <td><%= link_to 'Show', student_assessment_path(tests.student.id, test) %></td>
+                    <td><%= link_to 'Show', student_tpermit_path(test.student.id, test) %></td>
+                    <td><%= link_to 'Edit', edit_student_tpermit_path(test.student.id, test) %></td>
 
                 </tr>
                 <% end %>

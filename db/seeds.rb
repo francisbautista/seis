@@ -6,10 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(first_name: 'Yuri', last_name: 'Kristoff',
-email: 'yuri@gmail.com', password: 'password')
+#User.create!(first_name: 'Yuri', last_name: 'Kristoff',
+#email: 'yuri@gmail.com', password: 'password')
 
 
 
-30.times { Fabricate(:student) }
+#30.times { Fabricate(:student) }
 5.times { Fabricate(:requirement) }
