@@ -16,9 +16,6 @@ ActiveRecord::Schema.define(version: 20150121194549) do
   create_table "assessments", force: true do |t|
     t.string   "installment"
     t.string   "mode"
-    t.decimal  "tuition"
-    t.decimal  "discount"
-    t.text     "discount_desc"
     t.integer  "installment_number"
     t.integer  "or_number"
     t.integer  "student_id"
@@ -62,7 +59,6 @@ ActiveRecord::Schema.define(version: 20150121194549) do
 
   create_table "reservations", force: true do |t|
     t.string   "remarks"
-    t.decimal  "amount"
     t.integer  "student_id"
     t.integer  "or_number"
     t.boolean  "paid_status"
@@ -122,7 +118,6 @@ ActiveRecord::Schema.define(version: 20150121194549) do
     t.boolean  "recommendation"
     t.integer  "student_id"
     t.integer  "or_number"
-    t.decimal  "amount"
     t.boolean  "paid_status"
     t.datetime "created_at"
     t.datetime "updated_at"
