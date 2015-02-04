@@ -44,6 +44,8 @@ class Student < ActiveRecord::Base
     has_many :student_requirements
     has_many :requirements, through: :student_requirements
 
+    self.per_page = 10
+
     searchable do
         text :id_number, :boost => 3
         text :last_name, :boost => 2
@@ -56,7 +58,7 @@ class Student < ActiveRecord::Base
         text :city
         integer :batch_number
         integer :student_id
-        
+
     end
 
     def create_reqs
