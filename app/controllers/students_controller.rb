@@ -68,6 +68,43 @@ class StudentsController < ApplicationController
     end
   end
 
+ #  def search
+ #      if params[:search]
+ #          @search = Search.new(params[:search][:last_name], params[:search][:classification],
+ #                                  params[:search][:location], params[:search][:date],
+ #                                  params[:search][:capacity])
+ #          @students = student.select("*")
+ #          if !@search.last_name.blank?
+ #              @students = @students.where("name LIKE ?", "%#{@search.last_name}%")
+ #          end
+ #
+ #          if !@search.classification.blank?
+ #              @students = @students.where("classification LIKE ?", "%#{@search.classification}%")
+ #          end
+ #
+ #          if !@search.location.blank?
+ #              @students = @students.where("location LIKE ?", "%#{@search.location}%")
+ #          end
+ #
+ #          if !@search.date.blank?
+ #              @students = @students.where("date LIKE ?", "%#{@search.date}%")
+ #          end
+ #
+ #          if !@search.capacity.blank?
+ #              @students = @students.where("capacity LIKE ?", "%#{@search.capacity}%")
+ #          end
+ #      else
+ #          @students = student.all
+ #      end
+ #
+ #   @user = User.find(current_user)
+ #
+ #   if @user.students.all.include? @student
+ #     @owns_student = true
+ #   end
+ #
+ # end
+
 
 
   private
