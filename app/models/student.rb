@@ -56,6 +56,7 @@ class Student < ActiveRecord::Base
         text :city
         integer :batch_number
         integer :student_id
+        
     end
 
     def create_reqs
