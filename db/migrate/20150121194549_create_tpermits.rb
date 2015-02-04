@@ -12,7 +12,7 @@ class CreateTpermits < ActiveRecord::Migration
       t.boolean :recommendation
       t.integer :student_id
       t.integer :or_number
-      t.decimal :amount
+      # t.decimal :amount
       t.boolean :paid_status
 
       t.timestamps
