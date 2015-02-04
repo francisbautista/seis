@@ -4,7 +4,9 @@
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
-
+<div class="pull-right">
+    <%= will_paginate @students %>
+</div>
 <div class="panel panel-success">
     <div class="panel-heading">
         <h2 class="panel-title"><h3>Student List</h3></h2>
@@ -44,6 +46,7 @@
             </table>
 
     </div>
+
 </div>
 
 
@@ -89,4 +92,6 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<%= link_to 'Create New Student', new_student_path, :class=>"btn btn-small btn-success" %>
+<br>
+<br>

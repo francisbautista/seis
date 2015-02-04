@@ -7,14 +7,15 @@ class StudentsController < ApplicationController
   # GET /students.json
 
   def index
-#    @students = Student.all
-
-        @query = Student.solr_search do
-            fulltext params[:search]
-        end
-        @students = @query.results
-
-
+      if params[:search]
+          @query = Student.solr_search do
+              fulltext params[:search]
+          end
+          @students = @query.results
+      else
+          @students = Student.all
+          @students = Student.paginate(:page => params[:page], :per_page => 4)
+      end
   end
 
   # GET /students/1

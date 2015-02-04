@@ -44,7 +44,7 @@ class Student < ActiveRecord::Base
     has_many :student_requirements
     has_many :requirements, through: :student_requirements
 
-    self.per_page = 10
+    self.per_page = 5
 
     searchable do
         text :id_number, :boost => 3
