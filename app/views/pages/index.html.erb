@@ -1,4 +1,4 @@
-<h1 style="color:#186636;"><%if user_signed_in?%> Welcome,  <%= current_user.first_name %> <%end%></h1>
+<h2 style="color:#186636;"><%if user_signed_in?%> Welcome <%= current_user.first_name %> <%end%></h2>
 <h3>Today is <%= Date.today.strftime("%B %d, %Y")
 %></h3>
 
@@ -6,19 +6,19 @@
     <div class="col-md-4">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h3 class="panel-title">Admissions</h3>
+                <h3 class="panel-title"><b>ADMISSIONS</b></h3>
             </div>
             <div class="panel-body">
                 <%= link_to 'Add New Student', new_student_path %>
                 <hr>
-                <%= link_to 'View All Students', students_path %>
+                <%= link_to 'View All Test Permits', tests_path %>
             </div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h3 class="panel-title">Enrollment</h3>
+                <h3 class="panel-title"><b>ENROLLMENT</b></h3>
             </div>
             <div class="panel-body">
                 <%= link_to 'New Student', new_student_path %>
@@ -30,7 +30,7 @@
     <div class="col-md-4">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h3 class="panel-title">Billing</h3>
+                <h3 class="panel-title"><b>BILLING</b></h3>
             </div>
             <div class="panel-body">
                 <%= link_to 'View All Assessments', payments_path %>
