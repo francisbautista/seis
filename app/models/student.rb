@@ -32,11 +32,6 @@
 #  created_at         :datetime
 #  updated_at         :datetime
 #
-
-#TODO: Add status for activation c/o requirements
-#TODO: Create dropdown for old or new students
-#TODO: Change View Students to 'All Students'
-
 class Student < ActiveRecord::Base
     after_create :create_reqs
     validates_presence_of :first_name, :middle_name, :last_name
@@ -48,6 +43,20 @@ class Student < ActiveRecord::Base
     has_many :tpermits
     has_many :student_requirements
     has_many :requirements, through: :student_requirements
+
+    searchable do
+        text :id_number, :boost => 3
+        text :last_name, :boost => 2
+        text :first_name, :boost => 2
+        text :year_level
+        text :section
+        text :gender
+        text :barangay
+        text :street
+        text :city
+        integer :batch_number
+        integer :student_id
+    end
 
     def create_reqs
         @requirements = Requirement.all

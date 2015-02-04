@@ -7,7 +7,14 @@ class StudentsController < ApplicationController
   # GET /students.json
 
   def index
-    @students = Student.all
+#    @students = Student.all
+
+        @query = Student.solr_search do
+            fulltext params[:search]
+        end
+        @students = @query.results
+
+
   end
 
   # GET /students/1

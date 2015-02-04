@@ -1,3 +1,10 @@
+<%= form_tag students_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
 <div class="panel panel-success">
     <div class="panel-heading">
         <h2 class="panel-title"><h3>Student List</h3></h2>
