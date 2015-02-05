@@ -1,7 +1,9 @@
-<h2 style="color:#186636;"><%if user_signed_in?%> Welcome <%= current_user.first_name %> <%end%></h2>
 <h3>Today is <%= Date.today.strftime("%B %d, %Y")
 %></h3>
 
+<div class="alert alert-success" style="padding-top:0; padding-bottom:0;" role="alert">
+    <h3 style="color:#186636;"><%if user_signed_in?%> Welcome <%= current_user.first_name %> <%end%></h3>
+</div>
 <div class="row">
     <div class="col-md-4">
         <div class="panel panel-success">
