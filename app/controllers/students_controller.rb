@@ -9,7 +9,9 @@ class StudentsController < ApplicationController
           @query = Student.solr_search do
               fulltext params[:search]
           end
-          @students = Student.where(id: @query.results.map(&:id)).page(params[:page]).per_page(4)
+        #   @students = Student.where(id: @query.results.map(&:id)).page(params[:page]).per_page(4)
+        @students = @query.results
+
       else
           @students = Student.all
           @students = Student.paginate(:page => params[:page], :per_page => 4)
