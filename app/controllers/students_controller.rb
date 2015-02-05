@@ -1,17 +1,15 @@
 class StudentsController < ApplicationController
     before_filter :authenticate_user!
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
-
+    before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   # GET /students
   # GET /students.json
-
   def index
       if params[:search]
           @query = Student.solr_search do
               fulltext params[:search]
           end
-          @students = @query.results
+          @students = Student.where(id: @query.results.map(&:id)).page(params[:page]).per_page(4)
       else
           @students = Student.all
           @students = Student.paginate(:page => params[:page], :per_page => 4)
@@ -76,46 +74,7 @@ class StudentsController < ApplicationController
     end
   end
 
- #  def search
- #      if params[:search]
- #          @search = Search.new(params[:search][:last_name], params[:search][:classification],
- #                                  params[:search][:location], params[:search][:date],
- #                                  params[:search][:capacity])
- #          @students = student.select("*")
- #          if !@search.last_name.blank?
- #              @students = @students.where("name LIKE ?", "%#{@search.last_name}%")
- #          end
- #
- #          if !@search.classification.blank?
- #              @students = @students.where("classification LIKE ?", "%#{@search.classification}%")
- #          end
- #
- #          if !@search.location.blank?
- #              @students = @students.where("location LIKE ?", "%#{@search.location}%")
- #          end
- #
- #          if !@search.date.blank?
- #              @students = @students.where("date LIKE ?", "%#{@search.date}%")
- #          end
- #
- #          if !@search.capacity.blank?
- #              @students = @students.where("capacity LIKE ?", "%#{@search.capacity}%")
- #          end
- #      else
- #          @students = student.all
- #      end
- #
- #   @user = User.find(current_user)
- #
- #   if @user.students.all.include? @student
- #     @owns_student = true
- #   end
- #
- # end
-
-
-
-  private
+   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
       @student = Student.find(params[:id])
