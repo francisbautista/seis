@@ -177,7 +177,6 @@
                     <th>Recommendation</th>
                     <th>Student</th>
                     <th>Or number</th>
-                    <th>Amount</th>
                     <th>Paid status</th>
                     <th colspan="3"></th>
                 </tr>
@@ -197,7 +196,6 @@
                     <td><%= tpermit.recommendation %></td>
                     <td><%= tpermit.student_id %></td>
                     <td><%= tpermit.or_number %></td>
-                    <td><%= tpermit.amount %></td>
                     <td><%= tpermit.paid_status %></td>
 
                 </tr>
@@ -223,9 +221,6 @@
                 <tr>
                     <th>Installment</th>
                     <th>Mode of Payment</th>
-                    <th>Tuition Fee</th>
-                    <th>Discount Rate</th>
-                    <th>Discount Description</th>
                     <th>Installment Number</th>
                     <th>OR number</th>
                     <th colspan="3"></th>
@@ -237,9 +232,6 @@
                 <tr>
                     <td><%= assessment.installment %></td>
                     <td><%= assessment.mode %></td>
-                    <td><%= assessment.tuition %></td>
-                    <td><%= assessment.discount %></td>
-                    <td><%= assessment.discount_desc %></td>
                     <td><%= assessment.installment_number %></td>
                     <td><%= assessment.or_number %></td>
                     <td><%= link_to 'Show', student_assessment_path(@student, assessment) %></td>
