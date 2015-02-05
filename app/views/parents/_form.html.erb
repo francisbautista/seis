@@ -1,23 +1,96 @@
 <%= simple_form_for(@parent) do |f| %>
-  <%= f.error_notification %>
+<%= f.error_notification %>
+<!--<h2>PARENT INFORMATION</h2>-->
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-4 in">
+                <%= f.input :last_name, :input_html => { :wrap => :soft, :rows => 2}, :label => 'Last Name:', wrapper_html: { class:  'type' }, placeholder:'Rizal' %>
+            </div>
+            <div class="col-xs-4 in">
+                <%= f.input :first_name, :label => 'First Name:', placeholder:'Jose' %>
+            </div>
+            <div class="col-xs-4 in">
+                <%= f.input :middle_name, :label => 'Middle Initial:', placeholder:'P' %>
+                <!--Middle name?-->
+            </div>
+        </div>
+        <!-- todo: add validations to rest of fields -->
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+                <div class="form-inputs">
+                    <br><%= f.input :birthdate, as: :date, start_year: Date.today.year - 10,
+                    end_year: Date.today.year - 12, discard_day: false,
+                    order: [:month, :day, :year], :label => 'Birthdate:' %>
+                    <%= f.input :occupation %>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <div class="form-inputs">
+                    <%= f.input :relation %>
+                    <br>INCOME
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <div class="form-inputs">
+                    <br>MARITAL STATUS
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h4>ADDRESS</h4>
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+                <%= f.input :street, placeholder: 'Mabini Avenue', :label => 'Street:' %>
+                <br>POSTAL CODE
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <%= f.input :barangay, placeholder: 'Mayamot', :label => 'Barangay:' %>
+                <%= f.input :country,:label => 'Country:', priority: [ "Philippines" ] %>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <%= f.input :city, placeholder: 'Trese Martires', :label => 'City:' %>
+            </div>
+        </div>
+        <hr>
+        <h4>CONTACT DETAILS</h4>
+            <div class="row">
+                <div class="col-xs-6 col-md-4">
+                    <%= f.input :landline, placeholder: '(02) 673-XXXX', :label => 'Landline:' %>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <%= f.input :mobile, placeholder: '0917-XXX-XXXX',:label => 'Mobile:' %>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                   <%= f.input :email, placeholder: 'juandelacruz@gmail.com', :label => 'Email:' %>
+                </div>
+            </div>
+    </div>
+    <div class="panel-footer">
+        <div class="form-actions">
+            <center><%= f.button :submit %></center>
+        </div>
+    </div>
+</div>
 
-  <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :middle_name %>
-    <%= f.input :last_name %>
-    <%= f.input :relation %>
-    <%= f.input :birthdate %>
-    <%= f.input :occupation %>
-    <%= f.input :email %>
-    <%= f.input :landline %>
-    <%= f.input :mobile %>
-    <%= f.input :street %>
-    <%= f.input :barangay %>
-    <%= f.input :city %>
-    <%= f.input :country %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+
+  <!-- <div class="form-inputs">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div> -->
+
+
 <% end %>

@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-4">
                 <p>
-                    <strong>Id number:</strong>
+                    <strong>ID number:</strong>
                     <%= @student.id_number %>
                 </p>
 
@@ -123,19 +123,20 @@
                     <%= @student.email %>
                 </p>
                 <p>
-                    <strong>Institution name:</strong>
+                    <strong>Previous School:</strong>
                     <%= @student.institution_name %>
                 </p>
 
-                <p>
+                <!--<p>
                     <strong>Year level:</strong>
                     <%= @student.year_level %>
-                </p>
+                </p>-->
 
                 <p>
                     <strong>School year:</strong>
                     <%= @student.school_year %>
                 </p>
+
                 <p>
                     <strong>Grade:</strong>
                     <%= @student.grade %>
@@ -288,9 +289,6 @@
         <% end %>
     </div>
 </div>
-
-
-
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
