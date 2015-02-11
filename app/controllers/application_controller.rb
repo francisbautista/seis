@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   before_action :configure_devise_permitted_parameters, if: :devise_controller?
+  check_authorization
 
   def configure_devise_permitted_parameters
       registration_params = [:first_name, :middle_name, :last_name, :username, :position, :email, :password, :password_confirmation]
@@ -17,5 +18,9 @@ class ApplicationController < ActionController::Base
               |u| u.permit(registration_params)
           }
       end
+  end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
   end
 end
