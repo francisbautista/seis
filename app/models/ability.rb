@@ -3,27 +3,26 @@ class Ability
   ## 'Chief-Registrar','Registrar','Accountant','Guidance Counselor', 'Cashier'
   def initialize(user)
 
-      def initialize(user)
-        user ||= User.new # guest user (not logged in)
-        if user.role == 'Chief-Registrar'
-            can :manage, :all
-        elsif user.role == 'Registrar'
-            can :update, [Requirement]
-            can :read, all
-        elsif user.role == 'Accountant'
-            can :create, [Assessment, Reservation, Tpermit]
-            can :read, all
-        elsif user.role == 'Guidance Counselor'
-            can :manage, [Student, Parent, Guardianship, Tpermit]
-            can :read, all
-        elsif user.role == 'Cashier'
-            can :update, [Assessment, Reservation, Tpermit]
-            can :read, all
-        else
-            can :read, all
-        end
+    user ||= User.new # guest user (not logged in)
+    if user.role == 'Chief-Registrar'
+        can :manage, :all
+    elsif user.role == 'Registrar'
+        can :update, [Requirement]
+        can :read, all
+    elsif user.role == 'Accountant'
+        can :create, [Assessment, Reservation, Tpermit]
+        can :read, all
+    elsif user.role == 'Guidance Counselor'
+        can :manage, [Student, Parent, Guardianship, Tpermit]
+        can :read, all
+    elsif user.role == 'Cashier'
+        can :update, [Assessment, Reservation, Tpermit]
+        can :read, all
+    else
+        can :read, all
+    end
 
-      end
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
