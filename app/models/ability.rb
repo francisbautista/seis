@@ -7,7 +7,7 @@ class Ability
         user ||= User.new # guest user (not logged in)
         if user.role == 'Chief-Registrar'
           can :manage, :all
-      elsif user.role == 'Accountant'
+      elsif user.role == 'Registrar'
         elsif user.role == 'Chief-Registrar'
         elsif user.role == 'Chief-Registrar'
         elsif user.role == 'Chief-Registrar'
