@@ -11,6 +11,19 @@ class TpermitsController < InheritedResources::Base
     def show
     end
 
+    def update
+        @tpermit = Tpermit.find(params[:id])
+        respond_to do |format|
+            if @tpermit.update(tpermit_params)
+                format.html { redirect_to student_path, notice: 'tpermit was successfully updated.' }
+                format.json { head :no_content }
+            else
+                format.html { render action: 'edit' }
+                format.json { render json: @tpermit.errors, status: :unprocessable_entity }
+            end
+        end
+    end
+
     # GET /tpermits/new
     def new
         @tpermit = Tpermit.new
