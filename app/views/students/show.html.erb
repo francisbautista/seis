@@ -168,17 +168,18 @@
                 <tr>
                     <th>Date</th>
                     <th>Level</th>
-                    <th>Test date</th>
-                    <th>Test number</th>
+                    <th>Test Date</th>
+                    <th>Test Number</th>
                     <th>Status</th>
                     <th>Remarks</th>
-                    <th>Report card</th>
-                    <th>Moral cert</th>
+                    <th>Report Card</th>
+                    <th>Moral Cert</th>
                     <th>Recommendation</th>
                     <th>Student</th>
-                    <th>Or number</th>
-                    <th>Paid status</th>
-                    <th colspan="3"></th>
+                    <th>OR Number</th>
+                    <th>Paid Status</th>
+                    <th>Actions</th>
+                    <th colspan="2"></th>
                 </tr>
             </thead>
 
@@ -197,6 +198,10 @@
                     <td><%= tpermit.student_id %></td>
                     <td><%= tpermit.or_number %></td>
                     <td><%= tpermit.paid_status %></td>
+                    <td><%= link_to 'Show', student_tpermit_path(@student, tpermit) %>
+                    <%= link_to 'Edit', edit_student_tpermit_path(@student, tpermit) %>
+                    <%= link_to 'Delete', student_tpermit_path(@student, tpermit)%></td>
+                </tr>
 
                 </tr>
                 <% end %>
@@ -223,6 +228,8 @@
                     <th>Mode of Payment</th>
                     <th>Installment Number</th>
                     <th>OR number</th>
+                    <th>Status</th>
+                    <th>Actions</th>
                     <th colspan="3"></th>
                 </tr>
             </thead>
@@ -234,9 +241,10 @@
                     <td><%= assessment.mode %></td>
                     <td><%= assessment.installment_number %></td>
                     <td><%= assessment.or_number %></td>
-                    <td><%= link_to 'Show', student_assessment_path(@student, assessment) %></td>
-                    <td><%= link_to 'Edit', edit_student_assessment_path(@student, assessment) %></td>
-                    <td><%= link_to 'Delete', student_assessment_path(@student, assessment)%></td>
+                    <td><%= assessment.paid_status %></td>
+                    <td><%= link_to 'Show', student_assessment_path(@student, assessment) %>
+                    <%= link_to 'Edit', edit_student_assessment_path(@student, assessment) %>
+                    <%= link_to 'Delete', student_assessment_path(@student, assessment)%></td>
                 </tr>
                 <% end %>
             </tbody>
