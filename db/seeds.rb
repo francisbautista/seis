@@ -15,6 +15,12 @@ email: 'stuart@gmail.com', password: 'password', position: 'Registrar')
 User.create!(first_name: 'Bea', last_name: 'Francisco',
 email: 'bea@gmail.com', password: 'password', position: 'Accountant')
 
+User.create!(first_name: 'Clarisse', last_name: 'Chia',
+email: 'clarisse@gmail.com', password: 'password', position: 'Guidance Counselor')
+
+User.create!(first_name: 'Kath', last_name: 'Castillo',
+email: 'kath@gmail.com', password: 'password', position: 'Cashier')
+
 
 30.times { Fabricate(:student) }
 5.times { Fabricate(:requirement) }
