@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
     before_filter :authenticate_user!
+    load_and_authorize_resource
     before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   # GET /students

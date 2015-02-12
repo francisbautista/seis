@@ -4,22 +4,22 @@ class Ability
   def initialize(user)
 
     user ||= User.new # guest user (not logged in)
-    if user.role == 'Chief-Registrar'
+    if user.position == 'Chief-Registrar'
         can :manage, :all
-    elsif user.role == 'Registrar'
+    elsif user.position == 'Registrar'
         can :update, [Requirement]
-        can :read, all
-    elsif user.role == 'Accountant'
+        can :read, :all
+    elsif user.position == 'Accountant'
         can :create, [Assessment, Reservation, Tpermit]
-        can :read, all
-    elsif user.role == 'Guidance Counselor'
+        can :read, :all
+    elsif user.position == 'Guidance Counselor'
         can :manage, [Student, Parent, Guardianship, Tpermit]
-        can :read, all
-    elsif user.role == 'Cashier'
+        can :read, :all
+    elsif user.position == 'Cashier'
         can :update, [Assessment, Reservation, Tpermit]
-        can :read, all
+        can :read, :all
     else
-        can :read, all
+        can :read, :all
     end
 
 
