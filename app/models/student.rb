@@ -57,7 +57,7 @@ class Student < ActiveRecord::Base
         text :street
         text :city
         integer :batch_number
-        integer :student_id
+        # integer :student_id
 
     end
 
