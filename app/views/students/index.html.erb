@@ -17,8 +17,8 @@
                 <tr>
                     <th>ID No.</th>
                     <th>Full Name</th>
-                    <th>Year level</th>
                     <th>Section</th>
+                    <th>Year level</th>
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
@@ -28,9 +28,8 @@
                 <tr>
                     <th scope="row"><%= student.id_number %></th>
                     <td><b><%= student.last_name %></b>, <%= student.first_name %> <%= student.middle_name %></td>
-                    <td><%= student.batch_number %></td>
-                    <td><%= student.year_level %></td>
                     <td><%= student.section %></td>
+                    <td><%= student.year_level %></td>                    
                     <td><%= student.enrollment_status %></td>
                     <td><%= link_to 'Show', student %><hr style="margin:0;">
                         <%= link_to 'Edit', edit_student_path(student) %><hr style="margin:0;">
