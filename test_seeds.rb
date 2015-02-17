@@ -1,0 +1,2 @@
+
+Student.create!(id_number: 110464, first_name: 'Francis', middle_name: 'T', last_name: 'Bautista', batch_number: 4, year_level: 7, section: 'Hopeful', gender: 'M', nationality: 'Filipino', birthplace: 'Cebu', religion: 'Roman Catholic', street: 'Mark', barangay: 'Mayamot', city: 'Antipolo', postal_code: 1870, lancaster_resident: 0, landline: '681231', mobile: '09175035916', email: "francis@gmail.com", institution_name: 'Ateneo High School')

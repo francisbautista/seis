@@ -17,9 +17,9 @@ class StudentsController < ApplicationController
         end
     end
 
-    def class
-        @students = Student.
-    end
+    # def class
+    #     @students = Student.
+    # end
 
     # GET /students/1
     # GET /students/1.json
