@@ -2,26 +2,73 @@
   <div class="panel-body">
       <%= simple_form_for([@student, @tpermit]) do |f| %>
         <%= f.error_notification %>
-
-        <div class="form-inputs">
-          <%= f.input :date %>
-          <%= f.input :level %>
-          <%= f.input :test_date %>
-          <%= f.input :test_number %>
-          <%= f.input :status %>
-          <%= f.input :remarks %>
-          <%= f.input :report_card %>
-          <%= f.input :moral_cert %>
-          <%= f.input :recommendation %>
-          <%= f.input :student_id %>
-          <%= f.input :or_number %>
-          <%= f.input :paid_status %>
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+              <div class="form-inputs">
+                <%= f.input :date, :label => 'Date Today:' %>
+              </div>
+            </div>
         </div>
-
-        <div class="form-actions">
-          <%= f.button :submit %>
+        <hr>
+        <h4>TEST SCHEDULE</h4>
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+              <div class="form-inputs">
+                <%= f.input :level, :label=>'Level:' %>
+                <%= f.input :test_date, :label => 'Test Date:' %>
+                <%= f.input :remarks, :label=> 'Remarks:' %>
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <div class="form-inputs">
+                <%= f.input :test_number, :label=>'Test Number:' %>
+                <%= f.input :status, :label=> 'Test Status:' %>
+              </div>
+            </div>
+          </div>
+        <hr>
+        <h4>TEST REQUIREMENTS</h4>
+        <div clas="row">
+          <div class="col-xs-6 col-md-4">
+            <div class="form-inputs">
+                <%= f.input :report_card, :label=> 'Report Card' %>
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+            <div class="form-inputs">
+                <%= f.input :moral_cert, :label=> 'Certificate of Good Moral' %>
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+            <div class="form-inputs">
+                <%= f.input :recommendation, :label=> 'Recommendation Letter' %>
+            </div>
+          </div>
         </div>
-      <% end %>
+        <hr>
+        <h4>TEST PAYMENT</h4>
+        <div class="row">
+          <div class="col-xs-6 col-md-4">
+            <div class="form-inputs">
+                <%= f.input :student_id, :label=> 'ID Number:' %>
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+            <div class="form-inputs">
+                <%= f.input :or_number, :label=> 'OR Number:' %>
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+            <div class="form-inputs">
+                <%= f.input :paid_status, :label=> 'Paid?' %>
+            </div>
+          </div>
+        </div>
+        <hr>
+            <div class="form-actions">
+                <center><%= f.submit %></center>
+            </div>
+            <% end %>
 
   </div>
 </div>

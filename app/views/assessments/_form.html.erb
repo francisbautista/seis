@@ -3,18 +3,26 @@
       <%= simple_form_for([@student, @assessment]) do |f| %>
         <%= f.error_notification %>
 
-        <div class="form-inputs">
-          <%= f.input :installment, as: :select, :collection => ['Annual','Semi-Annual','Quarterly','Monthly'] %>
-          <%= f.input :mode, as: :select, :collection => ['Cash', 'Check'] %>
-          <%= f.input :installment_number %>
-          <%= f.input :or_number %>
-          <%= f.input :student_id %>
-          <hr>
-          <%= f.input :paid_status %>
+        <div class="row">
+            <div class="col-xs-4 in">
+              <div class="form-inputs">
+                <%= f.input :installment, as: :select, :collection => ['Annual','Semi-Annual','Quarterly','Monthly'], :label=>'Type of Payment:' %>
+                <%= f.input :installment_number, :label=>'Installment Number:' %>
+                <%= f.input :student_id, :label=>'ID Number:' %>
+              </div>
+            </div>
+            <div class="col-xs-4 in">
+              <div class="form-inputs">
+                <%= f.input :mode, as: :select, :collection => ['Cash', 'Check'], :label=>'Mode of Payment:' %>
+                <%= f.input :or_number, :label=>'OR Number:' %>
+                <br>
+                <%= f.input :paid_status, :label=>'Payment Status:' %>
+              </div>
+          </div>
         </div>
-
+        <br><br>
         <div class="form-actions">
-          <%= f.button :submit %>
+          <center><%= f.button :submit %></center>
         </div>
       <% end %>
   </div>
