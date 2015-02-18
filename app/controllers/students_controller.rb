@@ -6,15 +6,21 @@ class StudentsController < ApplicationController
     # GET /students
     # GET /students.json
     def index
+
         if params[:search]
-            @query = Student.solr_search do
-                fulltext params[:search]
-            end
-            @students = @query.results
+            @students = Student.index_search(params[:search]).order("created_at DESC")
         else
-            @students = Student.all
-            @students = Student.paginate(:page => params[:page], :per_page => 4)
+            @students = Student.order("created_at DESC").paginate(:page => params[:page])
         end
+        # if params[:search]
+        #     @query = Student.solr_search do
+        #         fulltext params[:search]
+        #     end
+        #     @students = @query.results
+        # else
+        #     @students = Student.all
+        #     @students = Student.paginate(:page => params[:page], :per_page => 4)
+        # end
     end
 
     # def class

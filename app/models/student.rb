@@ -44,22 +44,39 @@ class Student < ActiveRecord::Base
     has_many :student_requirements
     has_many :requirements, through: :student_requirements
 
+    before_save :full_name
     self.per_page = 5
 
-    searchable do
-        text :id_number, :boost => 3
-        text :last_name, :boost => 2
-        text :first_name, :boost => 2
-        text :year_level
-        text :section
-        text :gender
-        text :barangay
-        text :street
-        text :city
-        integer :batch_number
-        text :institution_name  
-        # integer :student_id
+    # searchable do
+    #     text :id_number, :boost => 3
+    #     text :last_name, :boost => 2
+    #     text :first_name, :boost => 2
+    #     text :year_level
+    #     text :section
+    #     text :gender
+    #     text :barangay
+    #     text :street
+    #     text :city
+    #     integer :batch_number
+    #     text :institution_name
+    #     # integer :student_id
+    # end
 
+
+    def full_name
+        self.full_name = "#{last_name.capitalize}, #{first_name} #{middle_name}"
+    end
+
+    def self.index_search(query)
+        where("first_name like ? or last_name like ?  or middle_name like ?", "%#{query}%","%#{query}%","%#{query}%")
+    end
+
+    def self.class_search(query)
+        where("section like ?", "%#{query}%")
+    end
+
+    def self.year_search(query)
+        where("year_level like ?", "%#{query}%")
     end
 
     def create_reqs

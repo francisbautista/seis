@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # Maintain relations
   resources :guardianships
   resources :parents
-  %w[index payments tests reservations].each do |page|
+  %w[index payments tests reservations classlist year].each do |page|
       get page, controller: 'pages', action: page
   end
 

@@ -1,0 +1,46 @@
+ <h1> View Class List </h1>
+ <%= form_tag classlist_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h2 class="panel-title"><h3>Student List</h3></h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID No.</th>
+                    <th>Full Name</th>
+                    <th>Gender</th>
+                    <th>Section</th>
+                    <th>Year level</th>
+                    <th>Actions</th>
+                    <th>Status</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <% @students.each do |student| %>
+                <tr>
+                    <th scope="row"><%= student.id_number %></th>
+                    <td><b><%= student.last_name %></b>, <%= student.first_name %> <%= student.middle_name %></td>
+                    <td><%= student.gender %></td>
+                    <td><%= student.section %></td>
+                    <td><%= student.year_level %></td>
+                    <td><%= link_to 'Show', student %><hr style="margin:0;">
+                        <%= link_to 'Edit', edit_student_path(student) %><hr style="margin:0;">
+                        <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <td><%= student.enrollment_status %></td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+
+    </div>
+
+</div>

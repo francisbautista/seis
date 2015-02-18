@@ -24,11 +24,11 @@ group :development, :test do
     gem 'sqlite3'
 end
 
-gem 'sunspot_rails'
-
-group :development do
-    gem 'sunspot_solr'
-end
+# gem 'sunspot_rails'
+#
+# group :development do
+#     gem 'sunspot_solr'
+# end
 
 gem 'will_paginate', '~> 3.0.6'
 

@@ -5,11 +5,13 @@
   </p>
 <% end %>
 <div class="pull-right">
-    <%= will_paginate @students %>
+
 </div>
 <div class="panel panel-success">
+
     <div class="panel-heading">
         <h2 class="panel-title"><h3>Student List</h3></h2>
+        <div class="pull-right"><%= will_paginate @students %></div>
     </div>
     <div class="panel-body">
         <table class="table table-striped">
@@ -19,8 +21,9 @@
                     <th>Full Name</th>
                     <th>Section</th>
                     <th>Year level</th>
-                    <th>Status</th>
                     <th>Actions</th>
+                    <th>Status</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -29,11 +32,11 @@
                     <th scope="row"><%= student.id_number %></th>
                     <td><b><%= student.last_name %></b>, <%= student.first_name %> <%= student.middle_name %></td>
                     <td><%= student.section %></td>
-                    <td><%= student.year_level %></td>                    
-                    <td><%= student.enrollment_status %></td>
+                    <td><%= student.year_level %></td>
                     <td><%= link_to 'Show', student %><hr style="margin:0;">
                         <%= link_to 'Edit', edit_student_path(student) %><hr style="margin:0;">
                         <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <td><%= student.enrollment_status %></td>
                     </tr>
                     <% end %>
                 </tbody>
