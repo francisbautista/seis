@@ -6,12 +6,12 @@ class PagesController < ApplicationController
     end
     def payments
         authorize! :read, :all
-        @payments = Assessment.all
+        @payments = Assessment.all.order("paid_status DESC")
     end
 
     def tests
         authorize! :read, :all
-        @tests = Tpermit.all
+        @tests = Tpermit.all.order("paid_status DESC")
     end
 
     def reservations

@@ -64,7 +64,7 @@ class Student < ActiveRecord::Base
 
 
     def full_name
-        self.full_name = "#{last_name.capitalize}, #{first_name} #{middle_name}"
+        "#{last_name.capitalize}, #{first_name} #{middle_name}"
     end
 
     def self.index_search(query)
