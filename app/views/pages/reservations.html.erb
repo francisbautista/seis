@@ -24,7 +24,7 @@
                         <td><%= reservation.or_number %></td>
                         <td><%= link_to 'Show', student_reservation_path(reservation.student.id, reservation) %>
                         <%= link_to 'Edit', edit_student_reservation_path(reservation.student.id, reservation) %></td>
-                        <td><b style="text-transform: uppercase;"><%= reservation.paid_status %></b></td>
+                    <td><b style="text-transform: uppercase;"><%= reservation.paid_status %></b></td>
                 </tr>
                     <% end %>
                 </tbody>
