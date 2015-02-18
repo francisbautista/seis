@@ -11,7 +11,11 @@ class PagesController < ApplicationController
 
     def tests
         authorize! :read, :all
-        @tests = Tpermit.all.order("paid_status DESC")
+        if params[:search]
+            @tests = Tpermit.test_search(params[:search]).order("test_date DESC")
+        else
+            @tests = Tpermit.all
+        end
     end
 
     def reservations

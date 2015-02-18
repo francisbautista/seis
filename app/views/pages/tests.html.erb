@@ -1,3 +1,10 @@
+<%= form_tag tests_path, :method => :get do %>
+ <p>
+   <%= datetime_select :search, params[:search] %>
+   <%= submit_tag "Search", :name => nil %>
+ </p>
+<% end %>
+
 <div class="panel panel-success">
     <div class="panel-heading">
         <h2 class="panel-title"><h3>Testing Information List</h3></h2>
@@ -8,6 +15,7 @@
                 <tr>
                     <th>Student</th>
                     <th>Test Number</th>
+                    <th>Testing Date</th>
                     <th>Status</th>
                     <th>Remarks</th>
                     <th>Actions</th>
@@ -23,6 +31,7 @@
                 <% end %>
                     <th scope="row"><b><%= test.student.last_name %></b>, <%= test.student.first_name %> <%= test.student.middle_name %></th>
                     <td><%= test.test_number %></td>
+                    <td><%= test.test_date.to_s %></td>
                     <td>
                         <% if test.status == false %>
                             <span class="label label-warning">NOT YET TAKEN / FAILED</span>

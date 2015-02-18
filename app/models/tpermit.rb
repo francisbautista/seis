@@ -24,4 +24,12 @@
 
 class Tpermit < ActiveRecord::Base
     belongs_to :student
+
+    def self.test_search(query)
+        puts query.to_s
+        puts "werwedf================="
+        t = Time.zone.parse("%#{query}%")
+
+        where("test_date like ?", t)
+    end
 end
