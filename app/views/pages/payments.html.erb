@@ -16,8 +16,12 @@
                 </tr>
             </thead>
             <tbody>
-                <% @payments.each do |payment| %>
-                <tr>
+            <% @payments.each do |payment| %>
+            <% if payment.paid_status ==  false %>
+                <tr class="danger">
+            <%else %>
+                <tr class="success">
+            <% end %>
                     <th scope="row"><%= payment.student.first_name %> <%= payment.student.last_name %></td>
                     <td><%= payment.mode %></th>
                     <td><%= payment.installment %></td>

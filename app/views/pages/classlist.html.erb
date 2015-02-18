@@ -19,7 +19,6 @@
                     <th>Gender</th>
                     <th>Section</th>
                     <th>Year level</th>
-                    <th>Actions</th>
                     <th>Status</th>
 
                 </tr>
@@ -32,9 +31,6 @@
                     <td><%= student.gender %></td>
                     <td><%= student.section %></td>
                     <td><%= student.year_level %></td>
-                    <td><%= link_to 'Show', student %><hr style="margin:0;">
-                        <%= link_to 'Edit', edit_student_path(student) %><hr style="margin:0;">
-                        <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     <td><%= student.enrollment_status %></td>
                     </tr>
                     <% end %>

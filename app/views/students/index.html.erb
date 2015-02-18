@@ -33,9 +33,15 @@
                     <td><b><%= student.last_name %></b>, <%= student.first_name %> <%= student.middle_name %></td>
                     <td><%= student.section %></td>
                     <td><%= student.year_level %></td>
-                    <td><%= link_to 'Show', student %><hr style="margin:0;">
-                        <%= link_to 'Edit', edit_student_path(student) %><hr style="margin:0;">
-                        <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <td>
+                        <div class="btn-group-sm" role="group" aria-label="..."><%= link_to "Show", student, :id => "open-contacts-dialog-btn",
+      :class => "btn btn-info", :type => "button", :method => :get %>
+                      <%= link_to "Edit", edit_student_path(student), :id => "open-contacts-dialog-btn",
+                :class => "btn btn-warning",:type => "button", :method => :get %>
+                <%= link_to "Delete", student, :id => "open-contacts-dialog-btn",
+                :class => "btn btn-danger",:type => "button",method:  :delete, data: { confirm: 'Are you sure?' }%>
+
+            </div>
                     <td><%= student.enrollment_status %></td>
                     </tr>
                     <% end %>

@@ -16,7 +16,11 @@
             </thead>
             <tbody>
                 <% @tests.each do |test| %>
-                <tr>
+                <% if test.paid_status ==  false %>
+                    <tr class="danger">
+                <%else %>
+                    <tr class="success">
+                <% end %>
                     <th scope="row"><%= test.student.first_name %> <%= test.student.last_name %></th>
                     <td><%= test.test_number %></td>
                     <td><%= test.status %></td>
