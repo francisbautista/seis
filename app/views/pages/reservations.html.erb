@@ -26,8 +26,12 @@
                         <td><%= reservation.remarks %></td>
                         <td><%= reservation.student_id %></td>
                         <td><%= reservation.or_number %></td>
-                        <td><%= link_to 'Show', student_reservation_path(reservation.student.id, reservation) %>
-                        <%= link_to 'Edit', edit_student_reservation_path(reservation.student.id, reservation) %></td>
+                        <td>
+                            <div class="btn-group-sm" role="group" aria-label="..."><%= link_to "Show", student_reservation_path(reservation.student.id, reservation), :id => "open-contacts-dialog-btn",
+          :class => "btn btn-info", :type => "button", :method => :get %>
+                          <%= link_to "Edit",edit_student_reservation_path(reservation.student.id, reservation), :id => "open-contacts-dialog-btn",
+                    :class => "btn btn-warning",:type => "button", :method => :get %>
+                </div>
                     <td><b style="text-transform: uppercase;"><%= reservation.paid_status %></b></td>
                 </tr>
                     <% end %>
