@@ -8,10 +8,10 @@
                 <tr>
                     <th>Student</th>
                     <th>Test Number</th>
-                    <th>Pass Status</th>
                     <th>Remarks</th>
                     <th>Payment</th>
                     <th>Actions</th>
+                    <th>Pass Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,9 +21,9 @@
                     <td><%= test.test_number %></td>
                     <td><%= test.status %></td>
                     <td><%= test.remarks %></td>
-                    <td><%= test.paid_status %></td>
-                    <td><%= link_to 'Show', student_tpermit_path(test.student.id, test) %></td>
-                    <td><%= link_to 'Edit', edit_student_tpermit_path(test.student.id, test) %></td>
+                    <td><%= link_to 'Show', student_tpermit_path(test.student.id, test) %>
+                    <%= link_to 'Edit', edit_student_tpermit_path(test.student.id, test) %></td>
+                    <td><b style="text-transform: uppercase;"><%= test.paid_status %></b></td>
 
                 </tr>
                 <% end %>

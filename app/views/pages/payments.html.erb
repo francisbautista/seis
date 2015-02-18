@@ -8,10 +8,11 @@
                 <tr>
                     <th>Student</th>
                     <th>Mode</th>
+                    <th>Installment Type</th>
                     <th>Installment Number</th>
                     <th>OR Number</th>
-                    <th>Payment Status</th>
                     <th>Actions</th>
+                    <th>Payment Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,8 +23,8 @@
                     <td><%= payment.installment %></td>
                     <td><%= payment.installment_number %></td>
                     <td><%= payment.or_number %></td>
-                    <td><%= payment.paid_status %></td>
                     <td><%= link_to 'Show', student_assessment_path(payment.student.id, payment) %></td>
+                    <td><b style="text-transform: uppercase;"><%= payment.paid_status %></b></td>
                 </tr>
                     <% end %>
                 </tbody>

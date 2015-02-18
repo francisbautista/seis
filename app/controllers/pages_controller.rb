@@ -24,16 +24,34 @@ class PagesController < ApplicationController
         if params[:search]
             @students = Student.class_search(params[:search]).order("gender DESC, last_name ASC")
         else
-            @students = Student.order("created_at DESC")
+            @students = Student.order("last_name ASC")
         end
     end
 
     def year
         authorize! :read, :all
         if params[:search]
-            @students = Student.year_search(params[:search]).order("created_at DESC")
+            @students = Student.year_search(params[:search]).order("last_name ASC")
         else
-            @students = Student.order("created_at DESC")
+            @students = Student.order("last_name ASC")
         end
+    end
+
+    def create
+        @student = Student.new(student_params)
+
+        respond_to do |format|
+            if @student.save
+                format.html { redirect_to @student, notice: 'Student was successfully created.' }
+                format.json { render :show, status: :created, location: @student }
+            else
+                format.html { render :new }
+                format.json { render json: @student.errors, status: :unprocessable_entity }
+            end
+        end
+    end
+
+    def existing
+        @student = Student.new
     end
 end

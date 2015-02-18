@@ -8,9 +8,9 @@ class StudentsController < ApplicationController
     def index
 
         if params[:search]
-            @students = Student.index_search(params[:search]).order("created_at DESC")
+            @students = Student.index_search(params[:search]).order("last_name ASC").paginate(:page => params[:page])
         else
-            @students = Student.order("created_at DESC").paginate(:page => params[:page])
+            @students = Student.order("last_name ASC").paginate(:page => params[:page])
         end
         # if params[:search]
         #     @query = Student.solr_search do
