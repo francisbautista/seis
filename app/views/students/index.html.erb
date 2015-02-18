@@ -42,7 +42,13 @@
                 :class => "btn btn-danger",:type => "button",method:  :delete, data: { confirm: 'Are you sure?' }%>
 
             </div>
-                    <td><%= student.enrollment_status %></td>
+                    <td>
+                        <% if student.enrollment_status == true %>
+                            <span class="label label-success">ENROLLED</span>
+                        <% else %>
+                            <span class="label label-warning">WAITING</span>
+                        <% end %>
+                    </td>
                     </tr>
                     <% end %>
                 </tbody>

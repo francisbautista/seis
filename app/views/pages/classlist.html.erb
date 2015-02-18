@@ -20,7 +20,6 @@
                     <th>Section</th>
                     <th>Year level</th>
                     <th>Status</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -31,7 +30,13 @@
                     <td><%= student.gender %></td>
                     <td><%= student.section %></td>
                     <td><%= student.year_level %></td>
-                    <td><%= student.enrollment_status %></td>
+                    <td>
+                        <% if student.enrollment_status == true %>
+                            <span class="label label-success">ENROLLED</span>
+                        <% else %>
+                            <span class="label label-warning">WAITING</span>
+                        <% end %>
+                    </td>
                     </tr>
                     <% end %>
                 </tbody>
