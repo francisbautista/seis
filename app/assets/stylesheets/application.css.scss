@@ -83,6 +83,7 @@
          width: auto;
          text-align: right;
          margin: 2px 10px;
+         display: block;
          &.radio, &.checkbox {
              float: left;
              margin: 0;
@@ -90,14 +91,15 @@
              text-align: left;
          }
          &.checkbox {
-             display: block;
-             margin-left: $indent;
+             //display: block;
+             //margin-left: $indent;
          }
          &.radio {
              margin-right: 10px;
          }
      }
      div.input {
+        display: block;
          margin-bottom: 10px;
      }
      input.radio_buttons, input.check_boxes {
