@@ -1,7 +1,7 @@
  <h1> View Class List </h1>
  <%= form_tag classlist_path, :method => :get do %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
+    <%= text_field_tag :search, params[:search], :placeholder => 'Enter section' %>
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
@@ -18,7 +18,7 @@
                     <th>Full Name</th>
                     <th>Gender</th>
                     <th>Section</th>
-                    <th>Year level</th>
+                    <th>Year Level</th>
                     <th>Status</th>
                 </tr>
             </thead>

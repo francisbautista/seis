@@ -15,8 +15,8 @@
             <div class="col-xs-6 col-md-4">
               <div class="form-inputs">
                 <%= f.input :level, :label=>'Level:' %>
-                <%= f.input :test_date, :label => 'Test Date:' %>
-                <%= f.input :remarks, :label=> 'Remarks:' %>
+                <%= f.label :remarks, :label=> 'Remarks:' %>
+                <%= f.input :remarks, label: false %>
               </div>
             </div>
             <div class="col-xs-6 col-md-4">
@@ -25,26 +25,37 @@
                 <%= f.input :status, :label=> 'Test Status:' %>
               </div>
             </div>
+            <div class="col-xs-6 col-md-4">
+                <div class="form-inputs">
+                <%= f.label :test_date, :label => 'Test Date:' %>
+                <%= f.input :test_date, label: false %>
+              </div>
+            </div>
           </div>
         <hr>
         <h4>TEST REQUIREMENTS</h4>
         <div clas="row">
           <div class="col-xs-6 col-md-4">
             <div class="form-inputs">
-                <%= f.input :report_card, :label=> 'Report Card' %>
+                <%= f.label :report_card, :label=> 'Report Card' %>
+                <%= f.input :report_card, label: false %>
               </div>
             </div>
             <div class="col-xs-6 col-md-4">
             <div class="form-inputs">
-                <%= f.input :moral_cert, :label=> 'Certificate of Good Moral' %>
+                <%= f.label :moral_cert, :label=> 'Certificate of Good Moral' %>
+                <%= f.input :moral_cert, label: false %>
               </div>
             </div>
             <div class="col-xs-6 col-md-4">
             <div class="form-inputs">
-                <%= f.input :recommendation, :label=> 'Recommendation Letter' %>
+                <%= f.label :recommendation, :label=> 'Recommendation Letter' %>
+                <%= f.input :recommendation, label: false %>
             </div>
           </div>
         </div>
+        <br>
+        <br>
         <hr>
         <h4>TEST PAYMENT</h4>
         <div class="row">
@@ -60,7 +71,8 @@
             </div>
             <div class="col-xs-6 col-md-4">
             <div class="form-inputs">
-                <%= f.input :paid_status, :label=> 'Paid?' %>
+                <%= f.label :paid_status, :label=> 'Paid?' %>
+                <%= f.input :paid_status, label: false %>
             </div>
           </div>
         </div>

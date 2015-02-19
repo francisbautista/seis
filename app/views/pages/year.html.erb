@@ -1,7 +1,7 @@
 <h1> Viewing Year Level List</h1>
 <%= form_tag year_path, :method => :get do %>
  <p>
-   <%= text_field_tag :search, params[:search] %>
+   <%= text_field_tag :search, params[:search], :placeholder => 'Enter year level' %>
    <%= submit_tag "Search", :name => nil %>
  </p>
 <% end %>

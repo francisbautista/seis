@@ -11,24 +11,23 @@
                 <%= f.input :first_name, :label => 'First Name:', placeholder:'Jose' %>
             </div>
             <div class="col-xs-4 in">
-                <%= f.input :middle_name, :label => 'Middle Initial:', placeholder:'P' %>
-                <!--Middle name?-->
+                <%= f.input :middle_name, :label => 'Middle Name:', placeholder:'P' %>
             </div>
         </div>
         <!-- todo: add validations to rest of fields -->
         <div class="row">
             <div class="col-xs-6 col-md-4">
                 <div class="form-inputs">
-                    <br><%= f.input :birthdate, as: :date, start_year: Date.today.year - 10,
+                    <%= f.label :birthdate, :label => 'Birthdate:' %>
+                    <%= f.input :birthdate, as: :date, start_year: Date.today.year - 10,
                     end_year: Date.today.year - 12, discard_day: false,
-                    order: [:month, :day, :year], :label => 'Birthdate:' %>
-                    <%= f.input :occupation %>
+                    order: [:month, :day, :year], label: false %>
+                    <%= f.input :occupation, :label => 'Occupation:' %>
                 </div>
             </div>
             <div class="col-xs-6 col-md-4">
                 <div class="form-inputs">
-                    <%= f.input :relation %>
-                    <br>INCOME
+                    <%= f.input :relation, :label => 'Relation:' %>
                 </div>
             </div>
             <div class="col-xs-6 col-md-4">
