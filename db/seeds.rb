@@ -143,7 +143,7 @@ gender: 'M',
 nationality: 'Filipino',
 birth_place: 'Manila',
 religion: 'Roman Catholic',
-street: '318'
+street: '318',
 barangay: 'BF Homes',
 city: 'Las Pinas',
 postal_code: 1600,
