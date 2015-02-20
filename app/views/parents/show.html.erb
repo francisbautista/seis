@@ -1,5 +1,8 @@
-<p id="notice"><%= notice %></p>
+<h1>SHOWING PARENT</h1>
+<div class="panel panel-default">
+  <div class="panel-body">
 
+<p id="notice"><%= notice %></p>
 <p>
   <strong>First name:</strong>
   <%= @parent.first_name %>
@@ -64,6 +67,8 @@
   <strong>Country:</strong>
   <%= @parent.country %>
 </p>
+</div>
+</div>
 
 <%= link_to 'Edit', edit_parent_path(@parent), :class=>"btn btn-small btn-success" %> |
 <%= link_to 'Back', parents_path, :class=>"btn btn-small btn-success" %>
