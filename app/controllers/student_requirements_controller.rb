@@ -4,6 +4,6 @@ class StudentRequirementsController < InheritedResources::Base
   private
 
     def student_requirement_params
-      params.require(:student_requirement).permit(:status)
+      params.require(:student_requirement).permit(:status, :student_id, :requirement_id)
     end
 end
