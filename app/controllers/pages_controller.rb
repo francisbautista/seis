@@ -58,4 +58,6 @@ class PagesController < ApplicationController
     def existing
         @student = Student.new
     end
+
+
 end
