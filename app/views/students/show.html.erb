@@ -257,6 +257,37 @@
     <%end%>
 </div>
 
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title"><h2>Parents/Guardians</h2></h3>
+    </div>
+    <div class="panel-body">
+        <% @student.guardianships.in_groups_of(3, false).each do |s_array| %>
+        <% for s in s_array %>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Required</th>
+                    <th>Remarks</th>
+                    <th>Status</th>
+                    <th colspan="4"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><%= s.parent.first_name %><%= s.parent.last_name %></td>
+                    <td><%= s.parent.relation %></td>
+                    <td><%= s.parent.mobile %></td>
+                    <td><%= s.parent.landline%></td>
+                </tr>
+            </tbody>
+        </table>
+        <% end %>
+        <% end %>
+    </div>
+</div>
 
 <div class="panel panel-success">
     <div class="panel-heading">
@@ -290,5 +321,5 @@
     </div>
 </div>
 
-<%= link_to 'Edit', edit_student_path(@student), :class=>"btn btn-small btn-success" %> 
+<%= link_to 'Edit', edit_student_path(@student), :class=>"btn btn-small btn-success" %>
 <%= link_to 'Back', students_path, :class=>"btn btn-small btn-success" %>
