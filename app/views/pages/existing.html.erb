@@ -11,7 +11,7 @@
                 <%= f.input :first_name, :label => 'First Name:', placeholder:'Jose' %>
             </div>
             <div class="col-xs-4 in">
-                <%= f.input :middle_name, :label => 'Middle Initial:', placeholder:'P' %>
+                <%= f.input :middle_name, :label => 'Middle Name:', placeholder:'Protasio' %>
                 <!--Middle name?-->
             </div>
         </div>
@@ -19,11 +19,14 @@
         <div class="row">
             <div class="col-xs-6 col-md-4">
                 <div class="form-inputs">
-                    <br><%= f.input :admission_date, order: [:month, :day, :year], :label => 'Date:' %>
-                    <br><%= f.input :gender, as: :select, :collection => ['Male','Female'],:label => 'Gender:' %>
-                    <br><br><%= f.input :birthdate, as: :date, start_year: Date.today.year - 10,
+                    <%= f.label :admission_date, :label => 'Date:' %>
+                    <%= f.input :admission_date, order: [:month, :day, :year], label: false %>
+                    <%= f.label :gender, :label=>'Gender:' %>
+                    <%= f.input :gender, as: :select, :collection => ['Male','Female'],label: false %>
+                    <%= f.label :birthdate, :label => 'Birthdate:' %>
+                    <%= f.input :birthdate, as: :date, start_year: Date.today.year - 10,
                     end_year: Date.today.year - 12, discard_day: false,
-                    order: [:month, :day, :year], :label => 'Birthdate:' %>
+                    order: [:month, :day, :year], label: false %>
                 </div>
             </div>
             <div class="col-xs-6 col-md-4">
@@ -31,9 +34,11 @@
                     <%= f.input :year_level, :label => 'Year Level:' %>
                     <%= f.input :nationality, placeholder: 'Filipino' %>
                     <%= f.input :birth_place, :label => 'Birth Place:' %>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <div class="form-inputs">
                     <%= f.input :religion, placeholder: 'Roman Catholic', :label => 'Religion:' %>
-                    <%= f.input :batch_number, :label => 'Batch No.:' %>
-                    <%= f.input :section, :label => 'Section:' %>
                 </div>
             </div>
         </div>
@@ -50,7 +55,8 @@
             </div>
             <div class="col-xs-6 col-md-4">
                 <%= f.input :city, placeholder: 'Trese Martires', :label => 'City:' %>
-                <br><%= f.input :lancaster_resident, :label => 'Lancaster Resident:' %>
+                <%= f.label :lancaster_resident, :label => 'Lancaster Resident?' %>
+                <%= f.input :lancaster_resident, label: false %>
             </div>
         </div>
         <hr>
@@ -66,7 +72,7 @@
                    <%= f.input :email, placeholder: 'juandelacruz@gmail.com', :label => 'Email:' %>
                 </div>
             </div>
-        <hr>
+        <!--<hr>
         <h4>PREVIOUS SCHOOL</h4>
             <div class="row">
                 <div class="col-xs-6 col-md-4">
@@ -76,16 +82,23 @@
                     <br>
                     <%= f.input :general_avg, collection: 1..100 %>
                 </div>
-            </div>
-    </div>
-
-            <div class="col-xs-4 in">
-                <div class="form-inputs">
-                    <%= f.input :id_number %>
-                    <%= f.input :enrollment_status, :label => 'Enrolled:' %>
+            </div>-->
+        <hr>
+        <h4>ENROLLED?</h4>
+            <div class="row">
+                <div class="col-xs-6 col-md-4">
+                    <%= f.input :id_number, :label => 'ID Number:' %>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <%= f.input :section, :label => 'Section:' %>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <%= f.label :enrollment_status, :label => 'Enrolled?' %>
+                    <%= f.input :enrollment_status, label: false %>
                 </div>
             </div>
-            <div class="col-xs-4 in">
+    </div>
+            <!--<div class="col-xs-4 in">
                 <div class="form-inputs">
 
 
@@ -93,7 +106,7 @@
                     <%= f.input :grade,:label => 'Grade:' %>
 
                 </div>
-            </div>
+            </div>-->
     <div class="panel-footer">
         <div class="form-actions">
             <center><%= f.button :submit %></center>

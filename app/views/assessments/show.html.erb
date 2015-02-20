@@ -1,3 +1,6 @@
+<h1>REVIEWING ASSESSMENT</h1>
+<div class="panel panel-default">
+  <div class="panel-body">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -11,12 +14,12 @@
 </p>
 
 <p>
-  <strong>Installment number:</strong>
+  <strong>Installment Number:</strong>
   <%= @assessment.installment_number %>
 </p>
 
 <p>
-  <strong>Or number:</strong>
+  <strong>OR Number:</strong>
   <%= @assessment.or_number %>
 </p>
 
@@ -24,5 +27,7 @@
   <strong>Student:</strong>
   <%= @assessment.student_id %>
 </p>
+</div>
+</div>
 
-<%= link_to 'Edit', edit_student_assessment_path(@student, @assessment) %>
+<%= link_to 'Edit', edit_student_assessment_path(@student, @assessment),:class=>"btn btn-small btn-success" %>

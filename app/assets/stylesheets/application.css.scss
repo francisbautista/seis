@@ -8,7 +8,7 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import '_globals';
-     button > a:visited{
+     button > a:visited {
      color: #fff;
  }
  body {
@@ -52,6 +52,13 @@
 
 
 // Simple Form Styling
+.forms {
+     background-color: #fff;
+     padding-top: 2%;
+     padding-bottom: 5%;
+     width: 80%;
+ }
+
  .simple_form div.input {
      margin-bottom: 10px;
      clear: both; /* Required for Webkit, but not for Gecko */
@@ -61,31 +68,38 @@
  .simple_form input {
      border-radius: 3px;
      border: 1px solid #cccccc;
-     box-shadow: none
+     box-shadow: none;
+     width: 350px;
+ }
+
+ .simple_form button {
+     background-color: #186636;
  }
 
  .simple_form {
      $indent: 120px;
      label {
          float: left;
-         width: $indent - 20px;
+         width: auto;
          text-align: right;
          margin: 2px 10px;
+         display: block;
          &.radio, &.checkbox {
-             float: none;
+             float: left;
              margin: 0;
              width: auto;
              text-align: left;
          }
          &.checkbox {
-             display: block;
-             margin-left: $indent;
+             //display: block;
+             //margin-left: $indent;
          }
          &.radio {
              margin-right: 10px;
          }
      }
      div.input {
+        display: block;
          margin-bottom: 10px;
      }
      input.radio_buttons, input.check_boxes {
