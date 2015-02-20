@@ -24,7 +24,7 @@ class AssessmentsController < InheritedResources::Base
         @assessment = Assessment.find(params[:id])
         respond_to do |format|
             if @assessment.update(assessment_params)
-                format.html { redirect_to student_path, notice: 'assessment was successfully updated.' }
+                format.html { redirect_to students_path, notice: 'assessment was successfully updated.' }
                 format.json { head :no_content }
             else
                 format.html { render action: 'edit' }
