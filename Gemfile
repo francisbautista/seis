@@ -49,6 +49,7 @@ gem 'uglifier', '>= 1.3.0'
 #===================================#
 #  Utility Gems                     #
 #===================================#
+gem 'seed_dump'
 gem 'turbolinks'
 gem 'annotate', ">=2.6.0"
 gem 'fabrication'

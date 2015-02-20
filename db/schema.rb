@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150121194549) do
   end
 
   create_table "guardianships", force: true do |t|
-    t.integer  "payment_id"
+    t.integer  "parent_id"
     t.integer  "student_id"
     t.datetime "created_at"
     t.datetime "updated_at"
