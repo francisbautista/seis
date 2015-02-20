@@ -43,6 +43,6 @@ class GuardianshipsController < ApplicationController
     end
 
     def guardianship_params
-      params.require(:guardianship).permit(:payment_id, :student_id)
+      params.require(:guardianship).permit(:parent_id, :student_id)
     end
 end
