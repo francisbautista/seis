@@ -12,8 +12,10 @@
   <tbody>
     <% @guardianships.each do |guardianship| %>
       <tr>
-        <td><%= guardianship.payment_id %></td>
-        <td><%= guardianship.student_id %></td>
+        <td><%= Parent.find(@guardianship.parent_id).first_name %>
+        <%= Parent.find(@guardianship.parent_id).last_name %></td>
+        <td><%= Student.find(@guardianship.student_id).first_name %>
+        <%= Student.find(@guardianship.student_id).last_name %></td>
         <td><%= link_to 'Show', guardianship %></td>
         <td><%= link_to 'Edit', edit_guardianship_path(guardianship) %></td>
         <td><%= link_to 'Destroy', guardianship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
