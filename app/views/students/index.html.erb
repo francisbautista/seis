@@ -1,6 +1,6 @@
  <%= form_tag students_path, :method => :get do %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
+    <%= text_field_tag :search, params[:search], :placeholder => 'Enter Last Name, First Name or Middle Name' %>
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
