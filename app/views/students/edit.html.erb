@@ -1,6 +1,143 @@
-<h1>EDIT</h1>
+<h1>EDITING</h1>
 
-<%= render 'form' %>
+<%= simple_form_for(@student) do |f| %>
+<%= f.error_notification %>
+<h2>STUDENT INFORMATION</h2>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-4 in">
+                <%= f.input :last_name, :input_html => { :wrap => :soft, :rows => 2}, :label => 'Last Name:', wrapper_html: { class:  'type' }, placeholder:'Rizal' %>
+            </div>
+            <div class="col-xs-4 in">
+                <%= f.input :first_name, :label => 'First Name:', placeholder:'Jose' %>
+            </div>
+            <div class="col-xs-4 in">
+                <%= f.input :middle_name, :label => 'Middle Name:', placeholder:'Protasio' %>
+                <!--Middle name?-->
+            </div>
+        </div>
+        <!-- todo: add validations to rest of fields -->
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+                <div class="form-inputs">
+                    <%= f.label :admission_date, :label => 'Date:' %>
+                    <%= f.input :admission_date, order: [:month, :day, :year], label: false %>
+                    <%= f.label :gender, :label=>'Gender:' %>
+                    <%= f.input :gender, as: :select, :collection => ['Male','Female'],label: false %>
+                    <%= f.label :birthdate, :label => 'Birthdate:' %>
+                    <%= f.input :birthdate, as: :date, start_year: Date.today.year - 10,
+                    end_year: Date.today.year - 12, discard_day: false,
+                    order: [:month, :day, :year], label: false %>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <div class="form-inputs">
+                    <%= f.input :year_level, :label => 'Year Level:' %>
+                    <%= f.input :nationality, placeholder: 'Filipino' %>
+                    <%= f.input :birth_place, :label => 'Birth Place:' %>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <div class="form-inputs">
+                    <%= f.input :religion, placeholder: 'Roman Catholic', :label => 'Religion:' %>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h4>ADDRESS</h4>
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+                <%= f.input :street, placeholder: 'Mabini Avenue', :label => 'Street:' %>
+                <%= f.input :postal_code, input_html: { maxlength: 4 },hint: 'Numeric values only please.',:label => 'Postal Code:' %>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <%= f.input :barangay, placeholder: 'Mayamot', :label => 'Barangay:' %>
+                <%= f.input :country,:label => 'Country:', priority: [ "Philippines" ] %>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <%= f.input :city, placeholder: 'Trese Martires', :label => 'City:' %>
+                <%= f.label :lancaster_resident, :label => 'Lancaster Resident?' %>
+                <%= f.input :lancaster_resident, label: false %>
+            </div>
+        </div>
+        <hr>
+        <h4>CONTACT DETAILS</h4>
+            <div class="row">
+                <div class="col-xs-6 col-md-4">
+                    <%= f.input :landline, placeholder: '(02) 673-XXXX', :label => 'Landline:' %>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <%= f.input :mobile, placeholder: '0917-XXX-XXXX',:label => 'Mobile:' %>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                   <%= f.input :email, placeholder: 'juandelacruz@gmail.com', :label => 'Email:' %>
+                </div>
+            </div>
+        <!--<hr>
+        <h4>PREVIOUS SCHOOL</h4>
+            <div class="row">
+                <div class="col-xs-6 col-md-4">
+                    <%= f.input :institution_name, :label => 'Previous School:' %>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <br>
+                    <%= f.input :general_avg, collection: 1..100 %>
+                </div>
+            </div>-->
+        <hr>
+        <h4>ENROLLED?</h4>
+            <div class="row">
+                <div class="col-xs-6 col-md-4">
+                    <%= f.input :id_number, :label => 'ID Number:' %>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <%= f.input :section, :label => 'Section:' %>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <%= f.label :enrollment_status, :label => 'Enrolled?' %>
+                    <%= f.input :enrollment_status, label: false %>
+                </div>
+            </div>
+    </div>
+            <!--<div class="col-xs-4 in">
+                <div class="form-inputs">
+
+
+                    <%= f.input :school_year, :label => 'School Year:' %>
+                    <%= f.input :grade,:label => 'Grade:' %>
+
+                </div>
+            </div>-->
+    <div class="panel-footer">
+        <div class="form-actions">
+            <center><%= f.button :submit %></center>
+        </div>
+    </div>
+</div>
+
+
+
+  <!-- <div class="form-inputs">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div> -->
+
+
+<% end %>
+
 
 <%= link_to 'Show', @student %> |
 <%= link_to 'Back', students_path %>
