@@ -17,10 +17,10 @@
           <tbody>
             <% @guardianships.each do |guardianship| %>
               <tr>
-                  <td><%= Parent.find(@guardianship.parent_id).first_name %>
-                  <%= Parent.find(@guardianship.parent_id).last_name %></td>
-                  <td><%= Student.find(@guardianship.student_id).first_name %>
-                  <%= Student.find(@guardianship.student_id).last_name %></td>
+                  <td><%= Parent.find(guardianship.parent_id).first_name %>
+                  <%= Parent.find(guardianship.parent_id).last_name %></td>
+                  <td><%= Student.find(guardianship.student_id).first_name %>
+                  <%= Student.find(guardianship.student_id).last_name %></td>
                   <td><%= link_to 'Show', guardianship %></td>
                 <td>
                         <div class="btn-group-sm" role="group" aria-label="..."><%= link_to "Show", guardianship, :id => "open-contacts-dialog-btn",
