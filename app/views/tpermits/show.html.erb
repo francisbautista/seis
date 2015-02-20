@@ -55,15 +55,11 @@
   <%= @tpermit.or_number %>
 </p>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @tpermit.amount %>
-</p>
 
 <p>
   <strong>Paid status:</strong>
   <%= @tpermit.paid_status %>
 </p>
 
-<%= link_to 'Edit', edit_tpermit_path(@tpermit) %> |
-<%= link_to 'Back', tpermits_path %>
+<%= link_to 'Edit', edit_student_tpermit_path(@student, @tpermit) %>
+<%= link_to 'Back', index_path %>

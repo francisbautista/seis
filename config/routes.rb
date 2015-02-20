@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   resources :requirements
   resources :student_requirements
   # Maintain relations
