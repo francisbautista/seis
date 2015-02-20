@@ -1,3 +1,6 @@
+<h1>REVIEWING STUDENT REQUIREMENT</h1>
+<div class="panel panel-default">
+  <div class="panel-body">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -14,6 +17,8 @@
   <strong>Status:</strong>
   <%= @student_requirement.status %>
 </p>
+</div>
+</div>
 
-<%= link_to 'Edit', edit_student_requirement_path(@student_requirement) %> |
-<%= link_to 'Back', student_requirements_path %>
+<%= link_to 'Edit', edit_student_requirement_path(@student_requirement), :class=>"btn btn-small btn-success" %> 
+<%= link_to 'Back', student_requirements_path, :class=>"btn btn-small btn-success" %>

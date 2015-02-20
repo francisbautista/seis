@@ -11,7 +11,7 @@
                 <%= f.input :first_name, :label => 'First Name:', placeholder:'Jose' %>
             </div>
             <div class="col-xs-4 in">
-                <%= f.input :middle_name, :label => 'Middle Name:', placeholder:'P' %>
+                <%= f.input :middle_name, :label => 'Middle Name:', placeholder:'Protasio' %>
             </div>
         </div>
         <!-- todo: add validations to rest of fields -->
@@ -41,11 +41,11 @@
         <div class="row">
             <div class="col-xs-6 col-md-4">
                 <%= f.input :street, placeholder: 'Mabini Avenue', :label => 'Street:' %>
+                <%= f.input :country,:label => 'Country:', priority: [ "Philippines" ] %>
                 <!-- <br>POSTAL CODE -->
             </div>
             <div class="col-xs-6 col-md-4">
                 <%= f.input :barangay, placeholder: 'Mayamot', :label => 'Barangay:' %>
-                <%= f.input :country,:label => 'Country:', priority: [ "Philippines" ] %>
             </div>
             <div class="col-xs-6 col-md-4">
                 <%= f.input :city, placeholder: 'Trese Martires', :label => 'City:' %>

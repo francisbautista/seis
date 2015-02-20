@@ -1,12 +1,26 @@
-<%= simple_form_for(@guardianship) do |f| %>
-  <%= f.error_notification %>
+<div class="panel panel-default">
+  <div class="panel-body">
+	<%= simple_form_for(@guardianship) do |f| %>
+	  <%= f.error_notification %>
+		<div class="row">
+            <div class="col-xs-6 col-md-4">
+              <div class="form-inputs">
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+			  <div class="form-inputs">
+                  <div class="form-inputs">
+                    <%= f.input :parent_id, :label => 'Parent', :as => :select, :collection => Parent.all.map{|u| ["#{u.last_name}, #{u.first_name}", u.id]} %>
+                    <%= f.input :student_id, :label => 'Student', :as => :select, :collection => Student.all.map{|u| ["#{u.last_name}, #{u.first_name}", u.id]} %>
+                  </div>
+			    <div class="form-actions">
+				    <%= f.button :submit %>
+				  </div>
+				</div>
+			</div>
+  		</div>
 
-  <div class="form-inputs">
-    <%= f.input :parent_id, :label => 'Parent', :as => :select, :collection => Parent.all.map{|u| ["#{u.last_name}, #{u.first_name}", u.id]} %>
-    <%= f.input :student_id, :label => 'Student', :as => :select, :collection => Student.all.map{|u| ["#{u.last_name}, #{u.first_name}", u.id]} %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
 <% end %>
+</div>
+</div>
