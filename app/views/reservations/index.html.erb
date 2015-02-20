@@ -18,7 +18,7 @@
                 <% @student.reservations.each do |reservation| %>
                 <tr>
                     <th scope="row"><%= reservation.student.first_name %> <%= reservation.student.last_name %></td>
-                        <td><%= reservation.status %></td>
+                        <td><%= reservation.paid_status %></td>
                         <td><%= reservation.remarks %></td>
                         <td><%= reservation.amount %></td>
                         <td><%= reservation.student_id %></td>
