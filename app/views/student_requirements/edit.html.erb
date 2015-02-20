@@ -1,6 +1,34 @@
 <h1>Editing student_requirement</h1>
 
-<%= render 'form' %>
+<div class="panel panel-default">
+  <div class="panel-body">
+<%= simple_form_for(@student_requirement) do |f| %>
+  <%= f.error_notification %>
+
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+              <div class="form-inputs">
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+			  <div class="form-inputs">
+                  <%= f.label :student_id, :label => 'Student:' %>
+                  <%= f.input :student_id, label: false, :as => :select, :collection => Student.all.map{|u| ["#{u.last_name}, #{u.first_name}", u.id]} %>
+                  <%= f.input :requirement_id, :label => 'Requirement Label:', :as => :select, :collection => Requirement.all.map{|u| [" #{u.name}", u.id]} %>
+			    <%= f.input :status, :label=>'Status:', inline_label: true %>
+			  </div>
+			</div>
+		</div>
+			<hr>
+			 <div class="form-actions">
+    			<center><%= f.button :submit "Update Student Requirement" %></center>
+  			</div>
+  		</div>
+  	</div>
+
+
+<% end %>
+
 
 <%= link_to 'Show', @student_requirement, :class=>"btn btn-small btn-success" %> 
 <%= link_to 'Back', student_requirements_path, :class=>"btn btn-small btn-success" %>

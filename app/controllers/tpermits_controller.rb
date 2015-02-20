@@ -15,7 +15,7 @@ class TpermitsController < InheritedResources::Base
         @tpermit = Tpermit.find(params[:id])
         respond_to do |format|
             if @tpermit.update(tpermit_params)
-                format.html { redirect_to tests_path, notice: 'tpermit was successfully updated.' }
+                format.html { redirect_to tests_path, notice: 'Test permit was successfully updated.' }
                 format.json { head :no_content }
             else
                 format.html { render action: 'edit' }
