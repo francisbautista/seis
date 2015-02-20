@@ -14,11 +14,6 @@
 </p>
 
 <p>
-  <strong>Amount:</strong>
-  <%= @reservation.amount %>
-</p>
-
-<p>
   <strong>Student:</strong>
   <%= @reservation.student_id %>
 </p>
@@ -30,5 +25,5 @@
 </div>
 </div>
 
-<%= link_to 'Edit', edit_reservations_path(@reservation), :class=>"btn btn-small btn-success" %>
+<%= link_to 'Edit', edit_reservation_path(@reservation), :class=>"btn btn-small btn-success" %>
 <%= link_to 'Back', reservations_path, :class=>"btn btn-small btn-success" %>
