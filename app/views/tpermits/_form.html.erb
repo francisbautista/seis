@@ -3,9 +3,14 @@
       <%= simple_form_for([@student, @tpermit]) do |f| %>
         <%= f.error_notification %>
         <div class="row">
-            <div class="col-xs-6 col-md-4">
+            <div class="col-md-8">
               <div class="form-inputs">
                 <%= f.input :date, :label => 'Date Today:' %>
+              </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-inputs">
+                <%= f.input :status, :label=> 'Test Status:' %>
               </div>
             </div>
         </div>
@@ -15,20 +20,27 @@
             <div class="col-xs-6 col-md-4">
               <div class="form-inputs">
                 <%= f.input :level, :label=>'Level:' %>
-                <%= f.label :remarks, :label=> 'Remarks:' %>
-                <%= f.input :remarks, label: false %>
               </div>
             </div>
             <div class="col-xs-6 col-md-4">
                 <div class="form-inputs">
                 <%= f.input :test_number, :label=>'Test Number:' %>
-                <%= f.input :status, :label=> 'Test Status:' %>
               </div>
             </div>
-            <div class="col-xs-6 col-md-4">
+          </div>
+          <div class="row">
+            <div class="col-md-8">
                 <div class="form-inputs">
                 <%= f.label :test_date, :label => 'Test Date:' %>
                 <%= f.input :test_date, label: false %>
+              </div>
+            </div>  
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+                <div class="form-inputs">
+                <%= f.label :remarks, :label=> 'Remarks:' %>
+                <%= f.input :remarks, label: false %>
               </div>
             </div>
           </div>
