@@ -10,15 +10,9 @@
               <th>Middle name</th>
               <th>Last name</th>
               <th>Relation</th>
-              <th>Birthdate</th>
-              <th>Occupation</th>
               <th>Email</th>
               <th>Landline</th>
               <th>Mobile</th>
-              <th>Street</th>
-              <th>Barangay</th>
-              <th>City</th>
-              <th>Country</th>
               <th colspan="3"></th>
             </tr>
           </thead>
@@ -30,18 +24,17 @@
                 <td><%= parent.middle_name %></td>
                 <td><%= parent.last_name %></td>
                 <td><%= parent.relation %></td>
-                <td><%= parent.birthdate %></td>
-                <td><%= parent.occupation %></td>
                 <td><%= parent.email %></td>
                 <td><%= parent.landline %></td>
                 <td><%= parent.mobile %></td>
-                <td><%= parent.street %></td>
-                <td><%= parent.barangay %></td>
-                <td><%= parent.city %></td>
-                <td><%= parent.country %></td>
-                <td><%= link_to 'Show', parent %></td>
-                <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
-                <td><%= link_to 'Destroy', parent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td>
+                        <div class="btn-group-sm" role="group" aria-label="..."><%= link_to "Show", parent, :id => "open-contacts-dialog-btn",
+      :class => "btn btn-info", :type => "button", :method => :get %>
+                      <%= link_to "Edit", edit_parent_path(parent), :id => "open-contacts-dialog-btn",
+                :class => "btn btn-warning",:type => "button", :method => :get %>
+                <%= link_to "Delete", parent, :id => "open-contacts-dialog-btn",
+                :class => "btn btn-danger",:type => "button",method:  :delete, data: { confirm: 'Are you sure?' }%></div>
+                </td>
               </tr>
             <% end %>
           </tbody>
