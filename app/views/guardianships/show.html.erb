@@ -2,12 +2,14 @@
 
 <p>
   <strong>Parent:</strong>
-  <%= @parent.first_name %>
+  <%= Parent.find(@guardianship.parent_id).first_name %>
+  <%= Parent.find(@guardianship.parent_id).last_name %>
 </p>
 
 <p>
   <strong>Student:</strong>
-  <%= @guardianship.student_id %>
+  <%= Student.find(@guardianship.student_id).first_name %>
+  <%= Student.find(@guardianship.student_id).last_name %>
 </p>
 
 <%= link_to 'Edit', edit_guardianship_path(@guardianship) %> |
