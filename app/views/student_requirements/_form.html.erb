@@ -9,9 +9,10 @@
               </div>
             </div>
             <div class="col-xs-6 col-md-4">
-			  <div class="form-inputs">
-                  <%= f.input :student_id, :label => 'Student', :as => :select, :collection => Student.all.map{|u| ["#{u.last_name}, #{u.first_name}", u.id]} %>
-                  <%= f.input :requirement_id, :label => 'Requirement Label"', :as => :select, :collection => Requirement.all.map{|u| [" #{u.name}", u.id]} %>
+			  <div class="form-inputs" align="center">
+                  <!--<%= f.label :student_id, :label => 'Student:' %>-->
+                  <%= f.input :student_id, label: false, :as => :select, :collection => Student.all.map{|u| ["#{u.last_name}, #{u.first_name}", u.id]} %>
+                  <%= f.input :requirement_id, :label => 'Requirement Label:', :as => :select, :collection => Requirement.all.map{|u| [" #{u.name}", u.id]} %>
 			    <%= f.input :status, :label=>'Status:' %>
 			  </div>
 			</div>
