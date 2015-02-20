@@ -17,8 +17,9 @@
           <tbody>
             <% @student_requirements.each do |student_requirement| %>
               <tr>
-                <td><%= student_requirement.student_id %></td>
-                <td><%= student_requirement.requirement_id %></td>
+                <td><%= Student.find(student_requirement.student_id).first_name %>
+                    <%= Student.find(student_requirement.student_id).last_name %></td>
+                <td><%= Requirement.find(student_requirement.requirement_id).label %></td>
                 <td><%= student_requirement.status %></td>
                 <td>
                         <div class="btn-group-sm" role="group" aria-label="..."><%= link_to "Show", student_requirement, :id => "open-contacts-dialog-btn",
