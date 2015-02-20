@@ -1,3 +1,6 @@
+<h1>REVIEWING REQUIREMENT</h1>
+<div class="panel panel-default">
+  <div class="panel-body">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -19,6 +22,6 @@
   <strong>Remarks:</strong>
   <%= @requirement.remarks %>
 </p>
-
-<%= link_to 'Edit', edit_requirement_path(@requirement) %> |
-<%= link_to 'Back', requirements_path %>
+</div>
+</div>
+<%= link_to 'Edit', edit_requirement_path(@requirement), :class=>"btn btn-small btn-success" %> <%= link_to 'Back', requirements_path, :class=>"btn btn-small btn-success" %>

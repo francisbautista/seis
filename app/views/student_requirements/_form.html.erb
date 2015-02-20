@@ -1,13 +1,27 @@
+<div class="panel panel-default">
+  <div class="panel-body">
 <%= simple_form_for(@student_requirement) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :student_id %>
-    <%= f.input :requirement_id %>
-    <%= f.input :status %>
-  </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+              <div class="form-inputs">
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+			  <div class="form-inputs">
+			    <%= f.input :student_id, :label=>'Student ID Number:' %>
+			    <%= f.input :requirement_id, :label=>'Requirement ID:' %>
+			    <%= f.input :status, :label=>'Status:' %>
+			  </div>
+			</div>
+		</div>
+			<hr>
+			 <div class="form-actions">
+    			<center><%= f.button :submit %></center>
+  			</div>
+  		</div>
+  	</div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+ 
 <% end %>
