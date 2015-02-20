@@ -10,8 +10,8 @@
             </div>
             <div class="col-xs-6 col-md-4">
 			  <div class="form-inputs">
-			    <%= f.input :student_id, :label=>'Student ID Number:' %>
-			    <%= f.input :requirement_id, :label=>'Requirement ID:' %>
+                  <%= f.input :student_id, :label => 'Student', :as => :select, :collection => Student.all.map{|u| ["#{u.last_name}, #{u.first_name}", u.id]} %>
+                  <%= f.input :requirement_id, :label => 'Requirement Label"', :as => :select, :collection => Requirement.all.map{|u| [" #{u.label}", u.id]} %>
 			    <%= f.input :status, :label=>'Status:' %>
 			  </div>
 			</div>
@@ -23,5 +23,5 @@
   		</div>
   	</div>
 
- 
+
 <% end %>
