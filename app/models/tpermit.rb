@@ -29,7 +29,7 @@ class Tpermit < ActiveRecord::Base
         puts query.to_s
         puts "werwedf================="
         t = Time.zone.parse("%#{query}%")
-
+        puts t
         where("test_date like ?", t)
     end
 end

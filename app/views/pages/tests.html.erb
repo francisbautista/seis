@@ -31,7 +31,7 @@
                 <% end %>
                     <th scope="row"><b><%= test.student.last_name %></b>, <%= test.student.first_name %> <%= test.student.middle_name %></th>
                     <td><%= test.test_number %></td>
-                    <td><%= test.test_date.to_s %></td>
+                    <td><%= test.test_date.to_formatted_s(:long_ordinal)   %></td>
                     <td>
                         <% if test.status == false %>
                             <span class="label label-warning">NOT YET TAKEN / FAILED</span>
