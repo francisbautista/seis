@@ -23,4 +23,5 @@
 class Parent < ActiveRecord::Base
     has_many :guardianships
     has_many :students, through: :guardianships
+    validates_presence_of :last_name, :middle_name, :first_name, :mobile
 end

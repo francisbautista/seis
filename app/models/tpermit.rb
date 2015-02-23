@@ -24,6 +24,7 @@
 
 class Tpermit < ActiveRecord::Base
     belongs_to :student
+    validates_presence_of :or_number, :test_number
 
     def self.test_search(query)
         puts query.to_s
