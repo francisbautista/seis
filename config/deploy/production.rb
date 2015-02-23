@@ -6,7 +6,7 @@
 # Don't declare `role :all`, it's a meta role
 role :app, %w{deploy@128.199.195.72}
 role :web, %w{deploy@128.199.195.72}
-role :db,  %w{deploy@example.com}
+role :db,  %w{deploy@128.199.195.72}
 
 set :stage, :production
 
