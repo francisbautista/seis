@@ -2,7 +2,7 @@
 lock '3.1.0'
 
 set :application, 'seis'
-set :repo_url, 'https://github.com/francisbautista/seis.git'
+set :repo_url, 'git@github.com:francisbautista/seis.git'
 
 set :deploy_to, '/home/deploy/seis'
 
