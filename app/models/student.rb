@@ -68,7 +68,7 @@ class Student < ActiveRecord::Base
     end
 
     def self.index_search(query)
-        where("first_name like ? or last_name like ?  or middle_name like ?", "%#{query}%","%#{query}%","%#{query}%")
+        where("lower(first_name) like ? or lower(last_name) like ?  or lower(middle_name) like ?", "%#{query}%","%#{query}%","%#{query}%")
     end
 
     def self.class_search(query)
