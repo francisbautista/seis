@@ -24,9 +24,9 @@
                     <%= f.label :gender, :label=>'Gender:' %>
                     <%= f.input :gender, as: :select, :collection => ['Male','Female'],label: false %>
                     <%= f.label :birthdate, :label => 'Birthdate:' %>
-                    <%= f.input :birthdate, as: :date, start_year: Date.today.year - 10,
-                    end_year: Date.today.year - 12, discard_day: false,
-                    order: [:month, :day, :year], label: false %>
+                    <%= f.input :birthdate, as: :date, start_year: Date.today.year - 100,
+                        end_year: Date.today.year + 100, discard_day: false,
+                        order: [:month, :day, :year], label: false %>
                 </div>
             </div>
             <div class="col-xs-6 col-md-4">
