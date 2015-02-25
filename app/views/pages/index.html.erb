@@ -18,20 +18,18 @@
         </div>
         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
-             <% if !current_user.position == "Accountant" %>
-                  <%= link_to 'Add New Student', new_student_path %>
-                  <hr>
-                  <%= link_to 'View All Test Permits', tests_path %>
-                  <hr>
-                  <%= link_to 'Add Parent', new_parent_path %>
-                  <hr>
-                  <%= link_to 'Add Existing Student', existing_path %>
-            <% else %>
-
+             <% if current_user.position == "Accountant" %>
                  <%= link_to 'View All Test Permits', tests_path %>
                  <hr>
                  <%= link_to 'Add Parent', new_parent_path %>
-                 <hr>
+            <% else %>
+                <%= link_to 'Add New Student', new_student_path %>
+                <hr>
+                <%= link_to 'View All Test Permits', tests_path %>
+                <hr>
+                <%= link_to 'Add Parent', new_parent_path %>
+                <hr>
+                <%= link_to 'Add Existing Student', existing_path %>
             <% end %>
           </div>
         </div>
