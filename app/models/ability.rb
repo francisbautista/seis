@@ -16,6 +16,7 @@ class Ability
         can :manage, [Student, Parent, Guardianship, Tpermit]
         can :read, :all
     elsif user.position == 'Cashier'
+        can :manage, [Reservation]
         can :update, [Assessment, Reservation, Tpermit]
         can :read, :all
     else
