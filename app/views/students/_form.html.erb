@@ -23,7 +23,7 @@
                     <%= f.input :admission_date, order: [:month, :day, :year], label: false %>
                     <%= f.label :gender, :label=>'Gender:' %>
                     <%= f.input :gender, as: :select, :collection => ['Male','Female'],label: false %>
-
+                    <%= f.label :birthdate, :label=>'Birthdate:' %>
                     <%= f.input :birthdate, as: :date, start_year: Date.today.year - 100,
                         end_year: Date.today.year + 100, discard_day: false,
                         order: [:month, :day, :year], label: false %>
