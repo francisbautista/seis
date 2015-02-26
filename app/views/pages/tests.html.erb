@@ -18,43 +18,46 @@
             </thead>
             <tbody>
                 <% @tests.each do |test| %>
-                <% if test.paid_status ==  false %>
-                    <tr class="danger">
-                <% else %>
-                    <tr class="success">
-                <% end %>
-                    <th scope="row"><b><%= test.student.last_name %></b>, <%= test.student.first_name %> <%= test.student.middle_name %></th>
-                    <td><%= test.test_number %></td>
-                    <td><%= test.test_date.to_formatted_s(:long_ordinal)   %></td>
-                    <td>
-                        <% if test.status == false %>
-                            <span class="label label-warning">NOT YET TAKEN / FAILED</span>
-                        <% else %>
-                        <span class="label label-success">PASSED</span>
-                        <% end %>
-                    </td>
-                    <td>
-                        <% if test.remarks.empty? %>
-                            NA
-                        <% else %>
-                            <%= test.remarks %>
-                        <% end %>
-                    </td>
-                    <td><div class="btn-group-sm" role="group" aria-label="..."><%= link_to "Show", student_tpermit_path(test.student.id, test), :id => "open-contacts-dialog-btn",
-  :class => "btn btn-info", :type => "button", :method => :get %>
-                  <%= link_to "Edit",edit_student_tpermit_path(test.student.id, test), :id => "open-contacts-dialog-btn",
-            :class => "btn btn-warning",:type => "button", :method => :get %>
-        </div>
-                    <td>
-                    <% if test.paid_status == false %>
-                        <span class="label label-warning">NOT YET PAID</span>
+                <% if !test.student.nil? %>
+                    <% if test.paid_status ==  false %>
+                        <tr class="danger">
                     <% else %>
-                    <span class="label label-success">PAID</span>
+                        <tr class="success">
                     <% end %>
-                    </td>
 
-                </tr>
-                <% end %>
+                        <th scope="row"><b><%= test.student.last_name %></b>, <%= test.student.first_name %> <%= test.student.middle_name %></th>
+                        <td><%= test.test_number %></td>
+                        <td><%= test.test_date.to_formatted_s(:long_ordinal)   %></td>
+                        <td>
+                            <% if test.status == false %>
+                                <span class="label label-warning">NOT YET TAKEN / FAILED</span>
+                            <% else %>
+                            <span class="label label-success">PASSED</span>
+                            <% end %>
+                        </td>
+                        <td>
+                            <% if test.remarks.empty? %>
+                                NA
+                            <% else %>
+                                <%= test.remarks %>
+                            <% end %>
+                        </td>
+                        <td><div class="btn-group-sm" role="group" aria-label="..."><%= link_to "Show", student_tpermit_path(test.student.id, test), :id => "open-contacts-dialog-btn",
+      :class => "btn btn-info", :type => "button", :method => :get %>
+                      <%= link_to "Edit",edit_student_tpermit_path(test.student.id, test), :id => "open-contacts-dialog-btn",
+                :class => "btn btn-warning",:type => "button", :method => :get %>
+            </div>
+                        <td>
+                        <% if test.paid_status == false %>
+                            <span class="label label-warning">NOT YET PAID</span>
+                        <% else %>
+                        <span class="label label-success">PAID</span>
+                        <% end %>
+                        </td>
+
+                    </tr>
+                    <% end %>
+                    <% end %>
                     </tbody>
                 </table>
 
