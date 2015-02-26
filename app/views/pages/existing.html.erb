@@ -11,7 +11,7 @@
                 <%= f.input :first_name, :label => 'First Name:', placeholder:'Jose' %>
             </div>
             <div class="col-xs-4 in">
-                <%= f.input :middle_name, :label => 'Middle Name:', placeholder:'Protacio' %>
+                <%= f.input :middle_name, :label => 'Middle Name:', placeholder:'Protasio' %>
                 <!--Middle name?-->
             </div>
         </div>
@@ -31,7 +31,7 @@
             </div>
             <div class="col-xs-6 col-md-4">
                 <div class="form-inputs">
-                    <%= f.input :year_level, :label => 'Grade Level:' %>
+                    <%= f.input :year_level, :label => 'Year Level:', as: :select, :collection => ['Kinder 1','Kinder 2','1','2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'] %>
                     <%= f.input :nationality, placeholder: 'Filipino' %>
                     <%= f.input :birth_place, :label => 'Birth Place:' %>
                 </div>
