@@ -19,11 +19,11 @@
         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
              <% if current_user.position == "Accountant" %>
-                 <%= link_to 'View All Test Permits', tests_path %>
+                 <%= link_to 'View Student Accounts', tests_path %>
                  <hr>
                  <%= link_to 'Add Parent', new_parent_path %>
             <% else %>
-                <%= link_to 'Add New Student', new_student_path %>
+                <%= link_to 'Add Applicant', new_student_path %>
                 <hr>
                 <%= link_to 'View All Test Permits', tests_path %>
                 <hr>
@@ -62,7 +62,7 @@
     </div>
     <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
       <div class="panel-body">
-          <%= link_to 'View All Assessments', payments_path %>
+          <%= link_to 'View Student Accounts', payments_path %>
           <hr>
           <%= link_to 'View All Test Permits', tests_path%>
           <hr>
