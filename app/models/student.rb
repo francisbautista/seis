@@ -72,7 +72,7 @@ class Student < ActiveRecord::Base
     end
 
     def self.class_search(query)
-        where("lower(section) like ?", "%#{query}%")
+        where("section LIKE ?", "%#{query}%")
     end
 
     def self.year_search(query)
