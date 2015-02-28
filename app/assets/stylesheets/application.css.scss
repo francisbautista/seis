@@ -11,15 +11,17 @@
      button > a:visited {
      color: #fff;
  }
+
+
+ .navbar-default .navbar-nav > li:hover {
+     background-color:#239a4b;
+ }
+
  body {
      background: $bg-brand;
      font-size: 1.5em;
      font: $body-font;
      max-width: 100%;
- }
-
- .navbar-default .navbar-nav > li:hover {
-     background-color:#239a4b;
  }
 
 // Navbar Styling
