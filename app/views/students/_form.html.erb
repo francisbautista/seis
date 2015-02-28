@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-xs-6 col-md-4">
                 <div class="form-inputs">
-                    <%= f.label :admission_date, :label => 'Application Date:' %>
+                    <%= f.label :admission_date, required: true; :label => 'Application Date:' %>
                     <%= f.input :admission_date, order: [:month, :day, :year], label: false %>
                     <%= f.label :gender, :label=>'Gender:' %>
                     <%= f.input :gender, as: :select, :collection => ['Male','Female'],label: false %>
@@ -31,7 +31,7 @@
             </div>
             <div class="col-xs-6 col-md-4">
                 <div class="form-inputs">
-                    <%= f.input :year_level, :label => 'Grade Level Applied For:', as: :select, :collection => ['Kinder 1','Kinder 2','1','2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'] %>
+                    <%= f.input :year_level, required: true, :label => 'Grade Level Applied For:', as: :select, :collection => ['Kinder 1','Kinder 2','1','2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'] %>
                     <%= f.input :nationality, placeholder: 'Filipino' %>
                     <%= f.input :birth_place, :label => 'Birth Place:' %>
                     <!--<%= f.input :religion, placeholder: 'Roman Catholic', :label => 'Religion:' %>
@@ -57,7 +57,7 @@
             </div>
             <div class="col-xs-6 col-md-4">
                 <%= f.input :city, placeholder: 'Trese Martires', :label => 'City:' %>
-                <%= f.label :lancaster_resident, :label => 'Lancaster Resident?' %>
+                <%= f.label :lancaster_resident, required: true, :label => 'Lancaster Resident?' %>
                 <%= f.input :lancaster_resident, label: false %>
             </div>
         </div>
@@ -65,10 +65,10 @@
         <h4>CONTACT DETAILS</h4>
             <div class="row">
                 <div class="col-xs-6 col-md-4">
-                    <%= f.input :landline, placeholder: '(02) 673-XXXX', :label => 'Landline:' %>
+                    <%= f.input :landline, required: true, placeholder: '(02) 673-XXXX', :label => 'Landline:' %>
                 </div>
                 <div class="col-xs-6 col-md-4">
-                    <%= f.input :mobile, placeholder: '0917-XXX-XXXX',:label => 'Mobile:' %>
+                    <%= f.input :mobile, placeholder: '0917XXXXXXX',:label => 'Mobile:' %>
                 </div>
                 <div class="col-xs-6 col-md-4">
                    <%= f.input :email, placeholder: 'juandelacruz@gmail.com', :label => 'Email:' %>
