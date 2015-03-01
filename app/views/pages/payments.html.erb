@@ -17,6 +17,7 @@
             </thead>
             <tbody>
             <% @payments.each do |payment| %>
+            <% if !payment.student.nil? %>
             <% if payment.paid_status ==  false %>
                 <tr class="danger">
             <%else %>
@@ -40,6 +41,7 @@
                         <% end %>
                     </td>
                 </tr>
+                <% end %>
                     <% end %>
                 </tbody>
             </table>
