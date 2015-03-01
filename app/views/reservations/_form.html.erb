@@ -11,7 +11,11 @@
               <div class="form-inputs">
                 <%= f.input :remarks, :label => 'Remarks:' %>
                 <%= f.input :student_id, :label => 'ID Number:' %>
-                <%= f.input :or_number, :label => 'OR Number:' %>                
+                <%= f.input :or_number, :label => 'OR Number:' %>
+              </div>
+              <div class="form-inputs" hidden>
+                <%= f.input :student_id, :label => 'ID Number:' %>
+
               </div>
             </div>
         </div>
