@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-xs-6 col-md-4">
                 <div class="form-inputs">
-                    <%= f.label :admission_date, required: true; :label => 'Application Date:' %>
+                    <%= f.label :admission_date, required: true, :label => 'Application Date:' %>
                     <%= f.input :admission_date, order: [:month, :day, :year], label: false %>
                     <%= f.label :gender, :label=>'Gender:' %>
                     <%= f.input :gender, as: :select, :collection => ['Male','Female'],label: false %>
