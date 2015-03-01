@@ -15,6 +15,7 @@ class PagesController < ApplicationController
             @tests = Tpermit.test_search(params[:search]).order("test_date DESC")
         else
             @tests = Tpermit.all
+            puts @tests
         end
     end
 
