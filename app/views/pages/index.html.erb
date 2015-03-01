@@ -1,5 +1,4 @@
-<h3>Today is <%= Date.today.strftime("%B %d, %Y")
-%></h3>
+<h3>Today is <%= Date.today.strftime("%B %d, %Y") %></h3>
 
 
     <%if user_signed_in?%>
@@ -19,9 +18,7 @@
         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
              <% if current_user.position == "Accountant" %>
-                 <%= link_to 'View Student Accounts', tests_path %>
-                 <hr>
-                 <%= link_to 'Add Parent', new_parent_path %>
+                 <%= link_to 'View Student Accounts', payments_path %>
             <% else %>
                 <%= link_to 'Add Applicant', new_student_path %>
                 <hr>
