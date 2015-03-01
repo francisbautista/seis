@@ -14,6 +14,7 @@ class Ability
         can :read, :all
         cannot :create, [Parent, Student]
     elsif user.position == 'Guidance Counselor'
+        can :create, [Student, Tpermit]
         can :manage, [Student, Parent, Guardianship, Tpermit]
         can :read, :all
     elsif user.position == 'Cashier'
