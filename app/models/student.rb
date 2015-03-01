@@ -35,12 +35,12 @@
 class Student < ActiveRecord::Base
     after_create :create_reqs
     validates_presence_of :first_name, :middle_name, :last_name
-    has_many :assessments, :dependent => :delete_all
-    has_many :reservations, :dependent => :delete_all
+    has_many :assessments
+    has_many :reservations
     has_many :guardianships
     has_many :parents, through: :guardianships
     # has_many :tests, :dependent => :delete_all
-    has_many :tpermits, :dependent => :delete_all
+    has_many :tpermits
     has_many :student_requirements
     has_many :requirements, through: :student_requirements
 
