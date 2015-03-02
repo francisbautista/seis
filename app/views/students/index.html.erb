@@ -28,6 +28,7 @@
             </thead>
             <tbody>
                 <% @students.each do |student| %>
+                <% if student.children? %>
                 <tr>
                     <th scope="row"><%= student.id_number %></th>
                     <td><b><%= student.last_name %></b>, <%= student.first_name %> <%= student.middle_name %></td>
@@ -50,6 +51,7 @@
                         <% end %>
                     </td>
                     </tr>
+                    <% end %>
                     <% end %>
                 </tbody>
             </table>
