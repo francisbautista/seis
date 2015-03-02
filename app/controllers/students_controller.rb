@@ -6,10 +6,13 @@ class StudentsController < ApplicationController
     # GET /students
     # GET /students.json
     def index
+
+        start_date = DateTime.new(2015,01,1)
+        end_date = DateTime.new(2015,02,28)
         if params[:search]
-            @students = Student.index_search(params[:search]).order("last_name ASC").paginate(:page => params[:page])
+            @students = Student.index_search(params[:search]).order("last_name ASC").paginate(:page => params[:page]).where("created_at between (?) and (?)", start_date, end_date)
         else
-            @students = Student.order("last_name ASC").paginate(:page => params[:page])
+            @students = Student.order("last_name ASC").paginate(:page => params[:page]).where("created_at between (?) and (?)", start_date, end_date)
         end
         # if params[:search]
         #     @query = Student.solr_search do
