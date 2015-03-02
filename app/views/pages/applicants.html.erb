@@ -1,0 +1,105 @@
+<%= form_tag students_path, :method => :get do %>
+ <p>
+   <%= text_field_tag :search, params[:search], :placeholder => 'Enter Last Name, First Name or Middle Name' %>
+   <%= submit_tag "Search", :name => nil %>
+ </p>
+<% end %>
+<div class="pull-right">
+
+</div>
+<div class="panel panel-success">
+
+   <div class="panel-heading">
+       <h2 class="panel-title"><h3>Students</h3></h2>
+   </div>
+   <div class="panel-body">
+       <table class="table table-striped">
+           <thead>
+               <tr>
+                   <th>ID No.</th>
+                   <th>Full Name</th>
+                   <th>Section</th>
+                   <th>Year level</th>
+                   <th>Actions</th>
+                   <th>Status</th>
+
+               </tr>
+           </thead>
+           <tbody>
+               <% @students.each do |student| %>
+               <% if !student.children? %>
+               <tr>
+                   <th scope="row"><%= student.id_number %></th>
+                   <td><b><%= student.last_name %></b>, <%= student.first_name %> <%= student.middle_name %></td>
+                   <td><%= student.section %></td>
+                   <td><%= student.year_level %></td>
+                   <td>
+                       <div class="btn-group-sm" role="group" aria-label="..."><%= link_to "Show", student, :id => "open-contacts-dialog-btn",
+     :class => "btn btn-info", :type => "button", :method => :get %>
+                     <%= link_to "Edit", edit_student_path(student), :id => "open-contacts-dialog-btn",
+               :class => "btn btn-warning",:type => "button", :method => :get %>
+               <%= link_to "Delete", student, :id => "open-contacts-dialog-btn",
+               :class => "btn btn-danger",:type => "button",method:  :delete, data: { confirm: 'Are you sure?' }%>
+
+           </div>
+                   <td>
+                       <% if student.enrollment_status == true %>
+                           <span class="label label-success">ENROLLED</span>
+                       <% else %>
+                           <span class="label label-warning">WAITING</span>
+                       <% end %>
+                   </td>
+                   </tr>
+                   <% end %>
+                   <% end %>
+               </tbody>
+           </table>
+
+   </div>
+
+</div>
+
+
+
+ <!-- <tbody>
+   <% @students.each do |student| %>
+     <tr>
+       <td><%= student.id_number %></td>
+       <td><%= student.first_name %></td>
+       <td><%= student.middle_name %></td>
+       <td><%= student.last_name %></td>
+       <td><%= student.admission_date %></td>
+       <td><%= student.batch_number %></td>
+       <td><%= student.year_level %></td>
+       <td><%= student.section %></td>
+       <td><%= student.gender %></td>
+       <td><%= student.enrollment_status %></td> -->
+       <!-- <td><%= student.birthdate %></td>
+       <td><%= student.nationality %></td>
+       <td><%= student.birth_place %></td>
+       <td><%= student.religion %></td>
+       <td><%= student.street %></td>
+       <td><%= student.barangay %></td>
+       <td><%= student.city %></td>
+       <td><%= student.postal_code %></td>
+       <td><%= student.country %></td>
+       <td><%= student.lancaster_resident %></td>
+       <td><%= student.landline %></td>
+       <td><%= student.mobile %></td>
+       <td><%= student.email %></td>
+       <td><%= student.institution_name %></td>
+       <td><%= student.year_level %></td>
+       <td><%= student.school_year %></td>
+       <td><%= student.grade %></td>
+       <td><%= student.general_avg %></td> -->
+       <!-- <td><%= link_to 'Show', student %></td>
+       <td><%= link_to 'Edit', edit_student_path(student) %></td>
+       <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     </tr>
+   <% end %>
+ </tbody>
+</table> -->
+
+<%= link_to 'Create New Student', new_student_path, :class=>"btn btn-small btn-success" %>
+<br>
+<br>

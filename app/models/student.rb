@@ -79,6 +79,10 @@ class Student < ActiveRecord::Base
         where("year_level like ?", "%#{query}%")
     end
 
+    def children?
+        tpermits.any?
+    end
+
     def create_reqs
         @requirements = Requirement.all
         @requirements.each do |r|

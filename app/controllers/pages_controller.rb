@@ -19,6 +19,15 @@ class PagesController < ApplicationController
         end
     end
 
+    def applicants
+        authorize! :read, :all
+        if params[:search]
+            @students = Student.index_search(params[:search]).order("last_name ASC")
+        else
+            @students = Student.order("last_name ASC")
+        end
+    end
+
     def reservations
         authorize! :read, :all
         @reservations = Reservation.all
