@@ -68,15 +68,15 @@ class Student < ActiveRecord::Base
     end
 
     def self.index_search(query)
-        where("lower(first_name) like ? or lower(last_name) like ?  or lower(middle_name) like ?", "%#{query}%","%#{query}%","%#{query}%")
+        where("lower(first_name) ILIKE ? or lower(last_name) ILIKE ?  or lower(middle_name) ILIKE ?", "%#{query}%","%#{query}%","%#{query}%")
     end
 
     def self.class_search(query)
-        where("section like ?", "%#{query}%")
+        where("section ILIKE ?", "%#{query}%")
     end
 
     def self.year_search(query)
-        where("year_level like ?", "%#{query}%")
+        where("year_level ILIKE ?", "%#{query}%")
     end
 
     def children?
