@@ -28,7 +28,7 @@
             </thead>
             <tbody>
                 <% @students.each do |student| %>
-                <% if student.children? %>
+                <% if student.enrollment_status==true %>
                 <tr>
                     <th scope="row"><%= student.id_number %></th>
                     <td><b><%= student.last_name %></b>, <%= student.first_name %> <%= student.middle_name %></td>
