@@ -25,7 +25,7 @@ class PagesController < ApplicationController
         if params[:search]
             @students = Student.index_search(params[:search]).order("last_name ASC").where("created_at >= (?)", start_date)
         else
-            @students = Student.order("last_name ASC").where("created_at between >= (?)", start_date)
+            @students = Student.order("last_name ASC").where("created_at >= (?)", start_date)
         end
     end
 
