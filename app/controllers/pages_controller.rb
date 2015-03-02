@@ -23,9 +23,9 @@ class PagesController < ApplicationController
         authorize! :read, :all
         start_date = DateTime.new(2015,21,28)
         if params[:search]
-            @students = Student.index_search(params[:search]).order("last_name ASC").where("created_at >= (?)", start_date)
+            @students = Student.index_search(params[:search]).order("last_name ASC").where("created_at > ?", start_date)
         else
-            @students = Student.order("last_name ASC").where("created_at >= (?)", start_date)
+            @students = Student.order("last_name ASC").where("created_at > ?", start_date)
         end
     end
 
